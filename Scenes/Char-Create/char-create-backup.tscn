@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://cc7epboff0gnl"]
+
+[ext_resource type="PackedScene" uid="uid://lju8rbqgrtpf" path="res://game.tscn" id="1_w2jc6"]
+[ext_resource type="Script" uid="uid://ctuihkekjs1ga" path="res://Scenes/Char-Create/char-create-functions.gd" id="2_uxjm6"]
+[ext_resource type="Script" uid="uid://dqcxh1xis5qfi" path="res://Scenes/Char-Create/name_confirm.gd" id="3_vrldc"]
+[ext_resource type="Script" uid="uid://paayy5a4cn5x" path="res://Scenes/Char-Create/felynx_chover.gd" id="4_qqco7"]
+[ext_resource type="Script" uid="uid://dnfloy4easy0w" path="res://Scenes/Char-Create/human_chover.gd" id="5_vqigx"]
+[ext_resource type="Script" uid="uid://c5t2f6yornfa7" path="res://Scenes/Char-Create/slyme_chover.gd" id="6_soyrn"]
+[ext_resource type="Script" uid="uid://dbwwjr0o7nwbj" path="res://Scenes/Char-Create/vulpine_chover.gd" id="7_jmh7k"]
+[ext_resource type="Script" uid="uid://7358bdsnyfmf" path="res://Scenes/Char-Create/equine_chover.gd" id="8_tar2q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sm0n8"]
+bg_color = Color(0.19607843, 0.29803923, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ea161"]
+bg_color = Color(0.19607843, 0.29803923, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npyni"]
+bg_color = Color(0.19607843, 0.29803923, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w74o5"]
+bg_color = Color(0.19607843, 0.29803923, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnylu"]
+bg_color = Color(0.19607843, 0.29803923, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+
+[node name="Game" unique_id=1115383842 instance=ExtResource("1_w2jc6")]
+
+[node name="context-text" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box" parent_id_path=PackedInt32Array(227325637) index="0" unique_id=531777206]
+text = "The sun rises, it's rays of light beaming through the clear glass window hanging just above your bed. It's round, with no visible bars or decorations between - set within a white metallic wall. Your room is decorated fairly plainly, having only been adopted here a month ago by your new caretaker. Your head is too foggy to think much of it right now, so you pick yourself up from your bed and head towards the bathroom.
+
+The doors open and shut automatically as you approach. Despite being made of well varnished wood, you can barely hear them open and shut on their magnetic tracks - leaving only your footsteps populating the wooden hallway and echoey bathroom as head on your way.
+
+You disrobe sluggishly, getting a good look of yourself in the mirror...
+Who are you?"
+script = ExtResource("2_uxjm6")
+
+[node name="Name-edit" type="LineEdit" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="2" unique_id=968762565]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 10.0
+offset_right = -1017.0
+offset_bottom = -318.0
+theme_override_font_sizes/font_size = 30
+
+[node name="name-confirm" type="Label" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="3" unique_id=2053704803]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 383.0
+offset_right = 306.0
+offset_bottom = 442.0
+theme_override_font_sizes/font_size = 26
+script = ExtResource("3_vrldc")
+
+[node name="choice1" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="0" unique_id=1702335498 groups=["button-group", "felynx-choice"]]
+text = "Felynx"
+
+[node name="felynx-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1" index="0" unique_id=1237904710 groups=["felynx-choice"]]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 9.0
+offset_top = -114.0
+offset_right = 1224.0
+offset_bottom = -39.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_sm0n8")
+text = "A cat like race of humanoids, sporting fuzzy ears and human-like skin. 
+Felynx's are typically short and flexible often found with tails as well as barbed pricks (if they have any)."
+script = ExtResource("4_qqco7")
+
+[node name="choice2" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="1" unique_id=107526656 groups=["human-choice"]]
+unique_name_in_owner = true
+text = "Human"
+
+[node name="human-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice2" index="0" unique_id=501399587 groups=["human-choice"]]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -369.0
+offset_top = -114.0
+offset_right = 647.0
+offset_bottom = -71.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ea161")
+text = "Straightforward as they come, humans are average in height, abilities and tendencies."
+script = ExtResource("5_vqigx")
+
+[node name="choice3" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="2" unique_id=268679704 groups=["slyme-choice"]]
+unique_name_in_owner = true
+text = "Slyme"
+
+[node name="slyme-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice3" index="0" unique_id=870136472 groups=["slyme-choice"]]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -747.0
+offset_top = -114.0
+offset_right = 216.0
+offset_bottom = -39.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_npyni")
+text = "A gooey race of people known for their voluptuous, shifting bodies and high libido. 
+They can be almost any size, and feed off of the essence of other creatures."
+script = ExtResource("6_soyrn")
+
+[node name="choice4" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="3" unique_id=1210305282 groups=["vulpine-choice"]]
+unique_name_in_owner = true
+text = "Vulpine"
+
+[node name="vulpine-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice4" index="0" unique_id=818707701 groups=["vulpine-choice"]]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -1125.0
+offset_top = -114.0
+offset_right = 169.0
+offset_bottom = -39.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_w74o5")
+text = "A sly, fox like race! Fox kin are known for their sharp wit and cunning. 
+Their body's sport fluffy ears and even fluffier tails, and those with members find themselves with large knots."
+script = ExtResource("7_jmh7k")
+
+[node name="choice5" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="4" unique_id=302050046 groups=["equine-choice"]]
+unique_name_in_owner = true
+text = "Equine"
+
+[node name="equine-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5" index="0" unique_id=556973267 groups=["button-group", "equine-choice"]]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 9.0
+offset_top = -215.0
+offset_right = 1134.0
+offset_bottom = -140.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_hnylu")
+text = "A large, bulky horse-like race. Endowed and blessed in every way, 
+they are known to be gentle in society today despite their impressive assets and constitution."
+script = ExtResource("8_tar2q")
+
+[node name="choice6" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="5" unique_id=229157224]
+unique_name_in_owner = true
+
+[node name="choice7" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="6" unique_id=183763465]
+unique_name_in_owner = true
+
+[node name="choice8" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="7" unique_id=1672160219]
+unique_name_in_owner = true
+
+[connection signal="text_submitted" from="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/Name-edit" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/name-confirm" method="_on_nameedit_text_submitted"]
+[connection signal="mouse_entered" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1/felynx-chover" method="_on_choice_1_mouse_entered"]
+[connection signal="mouse_exited" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1/felynx-chover" method="_on_choice_1_mouse_exited"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" method="_on_choice_1_pressed"]
+[connection signal="mouse_entered" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice2" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice2/human-chover" method="_on_choice_2_mouse_entered"]
+[connection signal="mouse_exited" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice2" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice2/human-chover" method="_on_choice_2_mouse_exited"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice2" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" method="_on_choice_2_pressed"]
+[connection signal="mouse_entered" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice3" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice3/slyme-chover" method="_on_choice_3_mouse_entered"]
+[connection signal="mouse_exited" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice3" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice3/slyme-chover" method="_on_choice_3_mouse_exited"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice3" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" method="_on_choice_3_pressed"]
+[connection signal="mouse_entered" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice4" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice4/vulpine-chover" method="_on_choice_4_mouse_entered"]
+[connection signal="mouse_exited" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice4" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice4/vulpine-chover" method="_on_choice_4_mouse_exited"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice4" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" method="_on_choice_4_pressed"]
+[connection signal="mouse_entered" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5/equine-chover" method="_on_choice_5_mouse_entered"]
+[connection signal="mouse_exited" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5/equine-chover" method="_on_choice_5_mouse_exited"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" method="_on_choice_5_pressed"]
