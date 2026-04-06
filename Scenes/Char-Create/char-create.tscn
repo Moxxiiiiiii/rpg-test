@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://ctuihkekjs1ga" path="res://Scenes/Char-Create/char-create-functions.gd" id="2_ea161"]
 [ext_resource type="Script" uid="uid://dqcxh1xis5qfi" path="res://Scenes/Char-Create/name_confirm.gd" id="3_77fi1"]
 [ext_resource type="Script" uid="uid://paayy5a4cn5x" path="res://Scenes/Char-Create/felynx_chover.gd" id="3_dm4fs"]
+[ext_resource type="Script" uid="uid://bqg4mk0fxgrtw" path="res://Scenes/Char-Create/height_script.gd" id="4_d0b7a"]
 [ext_resource type="Script" uid="uid://dnfloy4easy0w" path="res://Scenes/Char-Create/human_chover.gd" id="4_dm4fs"]
+[ext_resource type="Script" uid="uid://mr6bsmpb474" path="res://Scenes/Char-Create/stature_script.gd" id="5_5blr1"]
 [ext_resource type="Script" uid="uid://c5t2f6yornfa7" path="res://Scenes/Char-Create/slyme_chover.gd" id="5_xyf3y"]
 [ext_resource type="Script" uid="uid://dbwwjr0o7nwbj" path="res://Scenes/Char-Create/vulpine_chover.gd" id="6_vgbrb"]
 [ext_resource type="Script" uid="uid://7358bdsnyfmf" path="res://Scenes/Char-Create/equine_chover.gd" id="7_sm0n8"]
@@ -108,10 +110,20 @@ offset_bottom = 442.0
 theme_override_font_sizes/font_size = 26
 script = ExtResource("3_77fi1")
 
-[node name="choice1" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="0" unique_id=1702335498 groups=["button-group", "felynx-choice"]]
+[node name="height-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="4" unique_id=1794551858]
+unique_name_in_owner = true
+script = ExtResource("4_d0b7a")
+
+[node name="stature-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="5" unique_id=1389740892]
+script = ExtResource("5_5blr1")
+
+[node name="choice-grid" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="0" unique_id=1025699463]
+unique_name_in_owner = true
+
+[node name="choice1" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="0" unique_id=1702335498]
 text = "Felynx"
 
-[node name="felynx-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1" index="0" unique_id=1237904710 groups=["felynx-choice"]]
+[node name="felynx-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1" index="0" unique_id=1237904710]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -125,11 +137,11 @@ text = "A cat like race of humanoids, sporting fuzzy ears and human-like skin.
 Felynx's are typically short and flexible often found with tails as well as barbed pricks (if they have any)."
 script = ExtResource("3_dm4fs")
 
-[node name="choice2" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="1" unique_id=107526656 groups=["human-choice"]]
+[node name="choice2" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="1" unique_id=107526656]
 unique_name_in_owner = true
 text = "Human"
 
-[node name="human-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice2" index="0" unique_id=501399587 groups=["human-choice"]]
+[node name="human-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice2" index="0" unique_id=501399587]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -142,11 +154,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ea161")
 text = "Straightforward as they come, humans are average in height, abilities and tendencies."
 script = ExtResource("4_dm4fs")
 
-[node name="choice3" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="2" unique_id=268679704 groups=["slyme-choice"]]
+[node name="choice3" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="2" unique_id=268679704]
 unique_name_in_owner = true
 text = "Slyme"
 
-[node name="slyme-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice3" index="0" unique_id=870136472 groups=["slyme-choice"]]
+[node name="slyme-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice3" index="0" unique_id=870136472]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -160,11 +172,11 @@ text = "A gooey race of people known for their voluptuous, shifting bodies and h
 They can be almost any size, and feed off of the essence of other creatures."
 script = ExtResource("5_xyf3y")
 
-[node name="choice4" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="3" unique_id=1210305282 groups=["vulpine-choice"]]
+[node name="choice4" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="3" unique_id=1210305282]
 unique_name_in_owner = true
 text = "Vulpine"
 
-[node name="vulpine-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice4" index="0" unique_id=818707701 groups=["vulpine-choice"]]
+[node name="vulpine-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice4" index="0" unique_id=818707701]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -178,11 +190,11 @@ text = "A sly, fox like race! Fox kin are known for their sharp wit and cunning.
 Their body's sport fluffy ears and even fluffier tails, and those with members find themselves with large knots."
 script = ExtResource("6_vgbrb")
 
-[node name="choice5" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="4" unique_id=302050046 groups=["equine-choice"]]
+[node name="choice5" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="4" unique_id=302050046]
 unique_name_in_owner = true
 text = "Equine"
 
-[node name="equine-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5" index="0" unique_id=556973267 groups=["button-group", "equine-choice"]]
+[node name="equine-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5" index="0" unique_id=556973267]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -196,14 +208,167 @@ text = "A large, bulky horse-like race. Endowed and blessed in every way,
 they are known to be gentle in society today despite their impressive assets and constitution."
 script = ExtResource("7_sm0n8")
 
-[node name="choice6" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="5" unique_id=229157224]
+[node name="choice6" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="5" unique_id=229157224]
 unique_name_in_owner = true
 
-[node name="choice7" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="6" unique_id=183763465]
+[node name="choice7" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="6" unique_id=183763465]
 unique_name_in_owner = true
 
-[node name="choice8" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" parent_id_path=PackedInt32Array(1025699463) index="7" unique_id=1672160219]
+[node name="choice8" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="7" unique_id=1672160219]
 unique_name_in_owner = true
+
+[node name="height-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="1" unique_id=1607905276]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="height1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="0" unique_id=2113090993]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="height2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="1" unique_id=854475798]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="height3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="2" unique_id=119265329]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="height4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="3" unique_id=1870600769]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="height5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="4" unique_id=1666203018]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="height6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="5" unique_id=356414535]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="height7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="6" unique_id=1185931364]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="height8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="7" unique_id=851617443]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="2" unique_id=1320840365]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="stature1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="0" unique_id=1554325169]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="1" unique_id=745917867]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="2" unique_id=519315468]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="3" unique_id=2125930234]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="4" unique_id=1693586174]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="5" unique_id=1181235758]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="6" unique_id=1268394423]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="7" unique_id=958191102]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="Button" type="Button" parent="." index="1" unique_id=1168342465]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [connection signal="text_submitted" from="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/Name-edit" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/name-confirm" method="_on_nameedit_text_submitted"]
 [connection signal="mouse_entered" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1/felynx-chover" method="_on_choice_1_mouse_entered"]
@@ -221,3 +386,10 @@ unique_name_in_owner = true
 [connection signal="mouse_entered" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5/equine-chover" method="_on_choice_5_mouse_entered"]
 [connection signal="mouse_exited" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5/equine-chover" method="_on_choice_5_mouse_exited"]
 [connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" method="_on_choice_5_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/height-grid/height1" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/height-script" method="_on_height_1_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/height-grid/height2" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/height-script" method="_on_height_2_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/height-grid/height3" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/height-script" method="_on_height_3_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/height-grid/height4" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/height-script" method="_on_height_4_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/height-grid/height5" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/height-script" method="_on_height_5_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/height-grid/height6" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/height-script" method="_on_height_6_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/height-grid/height7" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/height-script" method="_on_height_7_pressed"]

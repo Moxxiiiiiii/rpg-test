@@ -24,10 +24,6 @@ window/size/viewport_height=1080
 
 project/assembly_name="Test"
 
-[global_group]
-
-button-group=""
-
 [physics]
 
 3d/physics_engine="Jolt Physics"
