@@ -7,3 +7,4 @@ func _on_nameedit_text_submitted(_new_text: String) -> void:
 	var playerName = %"Name-edit".text
 	%"Name-edit".hide()
 	%"name-confirm".text = "T..that's right... My name is " + playerName
+	print(playerName)

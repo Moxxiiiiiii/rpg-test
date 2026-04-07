@@ -6,10 +6,13 @@
 [ext_resource type="Script" uid="uid://paayy5a4cn5x" path="res://Scenes/Char-Create/felynx_chover.gd" id="3_dm4fs"]
 [ext_resource type="Script" uid="uid://bqg4mk0fxgrtw" path="res://Scenes/Char-Create/height_script.gd" id="4_d0b7a"]
 [ext_resource type="Script" uid="uid://dnfloy4easy0w" path="res://Scenes/Char-Create/human_chover.gd" id="4_dm4fs"]
-[ext_resource type="Script" uid="uid://mr6bsmpb474" path="res://Scenes/Char-Create/stature_script.gd" id="5_5blr1"]
+[ext_resource type="Script" uid="uid://mr6bsmpb474" path="res://Scenes/Char-Create/stature_script-FHV.gd" id="5_5blr1"]
 [ext_resource type="Script" uid="uid://c5t2f6yornfa7" path="res://Scenes/Char-Create/slyme_chover.gd" id="5_xyf3y"]
+[ext_resource type="Script" uid="uid://o1eadqliu1yi" path="res://Scenes/Char-Create/stature_script_s.gd" id="6_vc7we"]
 [ext_resource type="Script" uid="uid://dbwwjr0o7nwbj" path="res://Scenes/Char-Create/vulpine_chover.gd" id="6_vgbrb"]
+[ext_resource type="Script" uid="uid://b2bb6728scu1x" path="res://Scenes/Char-Create/stature_script_e.gd" id="7_2ttx1"]
 [ext_resource type="Script" uid="uid://7358bdsnyfmf" path="res://Scenes/Char-Create/equine_chover.gd" id="7_sm0n8"]
+[ext_resource type="Script" uid="uid://cuo4txg3h5w82" path="res://Scenes/Char-Create/class_variables.gd" id="11_3yepr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sm0n8"]
 bg_color = Color(0.19607843, 0.29803923, 0.34901962, 1)
@@ -114,8 +117,14 @@ script = ExtResource("3_77fi1")
 unique_name_in_owner = true
 script = ExtResource("4_d0b7a")
 
-[node name="stature-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="5" unique_id=1389740892]
+[node name="stature-script-FHV" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="5" unique_id=1389740892]
 script = ExtResource("5_5blr1")
+
+[node name="stature-script-S" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="6" unique_id=2112023532]
+script = ExtResource("6_vc7we")
+
+[node name="stature-script-E" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="7" unique_id=1563225192]
+script = ExtResource("7_2ttx1")
 
 [node name="choice-grid" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="0" unique_id=1025699463]
 unique_name_in_owner = true
@@ -291,7 +300,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="2" unique_id=1320840365]
+[node name="stature-grid-FHV" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="2" unique_id=1320840365]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -301,7 +310,7 @@ theme_override_constants/h_separation = 78
 theme_override_constants/v_separation = 33
 columns = 4
 
-[node name="stature1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="0" unique_id=1554325169]
+[node name="stature1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="0" unique_id=1554325169]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -309,7 +318,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="1" unique_id=745917867]
+[node name="stature2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="1" unique_id=745917867]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -317,7 +326,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="2" unique_id=519315468]
+[node name="stature3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="2" unique_id=519315468]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -325,7 +334,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="3" unique_id=2125930234]
+[node name="stature4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="3" unique_id=2125930234]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -333,7 +342,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="4" unique_id=1693586174]
+[node name="stature5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="4" unique_id=1693586174]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -341,7 +350,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="5" unique_id=1181235758]
+[node name="stature6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="5" unique_id=1181235758]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -349,7 +358,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="6" unique_id=1268394423]
+[node name="stature7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="6" unique_id=1268394423]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -357,7 +366,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid" index="7" unique_id=958191102]
+[node name="stature8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="7" unique_id=958191102]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -365,10 +374,156 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="Button" type="Button" parent="." index="1" unique_id=1168342465]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="stature-grid-S" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="3" unique_id=400929298]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="stature1-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="0" unique_id=2041668742]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature2-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="1" unique_id=245454321]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature3-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="2" unique_id=1296799569]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature4-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="3" unique_id=924873109]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature5-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="4" unique_id=1405823246]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature6-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="5" unique_id=787538736]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature7-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="6" unique_id=1239258226]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature8-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="7" unique_id=1042930061]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature-grid-E" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="4" unique_id=1727961296]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="stature1-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="0" unique_id=1109338374]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature2-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="1" unique_id=1754128712]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature3-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="2" unique_id=448850395]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature4-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="3" unique_id=1348434190]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature5-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="4" unique_id=447972964]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature6-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="5" unique_id=1124480325]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature7-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="6" unique_id=341936012]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="stature8-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="7" unique_id=80229664]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="class-variables" type="Node" parent="." index="1" unique_id=892205861]
+script = ExtResource("11_3yepr")
 
 [connection signal="text_submitted" from="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/Name-edit" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/name-confirm" method="_on_nameedit_text_submitted"]
 [connection signal="mouse_entered" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1/felynx-chover" method="_on_choice_1_mouse_entered"]
@@ -393,3 +548,12 @@ offset_bottom = 8.0
 [connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/height-grid/height5" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/height-script" method="_on_height_5_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/height-grid/height6" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/height-script" method="_on_height_6_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/height-grid/height7" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/height-script" method="_on_height_7_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV/stature1" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" method="_on_stature_1_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV/stature2" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" method="_on_stature_2_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV/stature3" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" method="_on_stature_3_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV/stature4" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" method="_on_stature_4_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV/stature5" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" method="_on_stature_5_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S/stature1-S" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-S" method="_on_stature_1s_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E/stature1-E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-E" method="_on_stature_1e_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E/stature2-E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-E" method="_on_stature_2e_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E/stature3-E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-E" method="_on_stature_3e_pressed"]

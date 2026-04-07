@@ -1,4 +1,5 @@
-extends Node
+#Inherit class and define Variables
+extends classVariables
 @onready var height_grid: GridContainer = %"height-grid"
 @onready var height_1: Button = %height1
 @onready var height_2: Button = %height2
@@ -9,9 +10,7 @@ extends Node
 @onready var height_7: Button = %height7
 @onready var height_8: Button = %height8
 
-
-var playerHeight
-
+#Define Relevant Functions for Signals - See Titles
 func gather_height(n) -> String:
 	if n == 1:
 		playerHeight = %height1.text
@@ -38,6 +37,42 @@ func gather_height(n) -> String:
 		playerHeight = "unknownHeight"
 		return playerHeight
 
+func displayStatureChoice() -> void:
+	if playerRace == "Felynx":
+		%stature1.text = "Frail"
+		%stature2.text = "Lithe"
+		%stature3.text = "Average"
+		%stature4.text = "Strong"
+		%stature5.text = "Thickset"
+		%"height-grid".hide()
+		%"stature-grid-FHV".show()
+	elif playerRace == "Human":
+		%stature1.text = "Frail"
+		%stature2.text = "Lithe"
+		%stature3.text = "Average"
+		%stature4.text = "Strong"
+		%stature5.text = "Thickset"
+		%"height-grid".hide()
+		%"stature-grid-FHV".show()
+	elif playerRace == "Vulpine":
+		%stature1.text = "Frail"
+		%stature2.text = "Lithe"
+		%stature3.text = "Average"
+		%stature4.text = "Strong"
+		%stature5.text = "Thickset"
+		%"height-grid".hide()
+		%"stature-grid-FHV".show()
+	elif playerRace == "Slyme":
+		%"stature1-S".text = "Bubbly"
+		%"height-grid".hide()
+		%"stature-grid-S".show()
+	elif playerRace == "Equine":
+		%"stature1-E".text = "Average"
+		%"stature2-E".text = "Strong"
+		%"stature3-E".text = "Thick Set"
+		%"height-grid".hide()
+		%"stature-grid-E".show()
+
 func _on_height_1_pressed() -> void:
 	## Gather Height Info
 	gather_height(1)
@@ -56,14 +91,7 @@ func _on_height_1_pressed() -> void:
 	%"height-grid".hide()
 	
 	## Prepare and display new elements
-	%"stature-grid".show()
-	%stature1.text = "Frail"
-	%stature2.text = "Lithe"
-	%stature3.text = "Average"
-	%stature4.text = "Strong"
-	%stature5.text = "Thickset"
-	%stature6.text = " "
-	%stature7.text = " "
+	displayStatureChoice()
 	
 
 func _on_height_2_pressed() -> void:
@@ -84,14 +112,7 @@ func _on_height_2_pressed() -> void:
 	%"height-grid".hide()
 	
 	## Prepare and display new elements
-	%"stature-grid".show()
-	%stature1.text = "Frail"
-	%stature2.text = "Lithe"
-	%stature3.text = "Average"
-	%stature4.text = "Strong"
-	%stature5.text = "Thickset"
-	%stature6.text = " "
-	%stature7.text = " "
+	displayStatureChoice()
 
 
 func _on_height_3_pressed() -> void:
@@ -112,14 +133,7 @@ func _on_height_3_pressed() -> void:
 	%"height-grid".hide()
 	
 	## Prepare and display new elements
-	%"stature-grid".show()
-	%height1.text = "Bubbly"
-	%stature2.text = " "
-	%stature3.text = " "
-	%stature4.text = " "
-	%stature5.text = " "
-	%stature6.text = " "
-	%stature7.text = " "
+	displayStatureChoice()
 	
 
 
@@ -141,14 +155,7 @@ func _on_height_4_pressed() -> void:
 	%"height-grid".hide()
 	
 	## Prepare and display new elements
-	%"stature-grid".show()
-	%stature1.text = "Frail"
-	%stature2.text = "Lithe"
-	%stature3.text = "Average"
-	%stature4.text = "Strong"
-	%stature5.text = "Thickset"
-	%stature6.text = " "
-	%stature7.text = " "
+	displayStatureChoice()
 
 
 func _on_height_5_pressed() -> void:
@@ -169,7 +176,7 @@ func _on_height_5_pressed() -> void:
 	%"height-grid".hide()
 	
 	## Prepare and display new elements
-	%"stature-grid".show()
+	displayStatureChoice()
 
 
 func _on_height_6_pressed() -> void:
@@ -190,14 +197,7 @@ func _on_height_6_pressed() -> void:
 	%"height-grid".hide()
 	
 	## Prepare and display new elements
-	%"stature-grid".show()
-	%stature1.text = "Average"
-	%stature2.text = "Strong"
-	%stature3.text = "Thick Set"
-	%stature4.text = " "
-	%stature5.text = " "
-	%stature6.text = " "
-	%stature7.text = " "
+	displayStatureChoice()
 
 
 func _on_height_7_pressed() -> void:
@@ -218,8 +218,4 @@ func _on_height_7_pressed() -> void:
 	%"height-grid".hide()
 	
 	## Prepare and display new elements
-	%"stature-grid".show()
-	%stature4.text = " "
-	%stature5.text = " "
-	%stature6.text = " "
-	%stature7.text = " "
+	displayStatureChoice()

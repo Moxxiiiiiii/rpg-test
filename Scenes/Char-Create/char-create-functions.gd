@@ -1,4 +1,4 @@
-extends RichTextLabel
+extends classVariables
 @onready var choice_grid: GridContainer = %"choice-grid"
 @onready var choice_1: Button = %choice1
 @onready var choice_2: Button = %choice2
@@ -21,8 +21,6 @@ extends RichTextLabel
 
 
 @onready var context_text: RichTextLabel = %"context-text"
-
-var playerRace
 
 func gather_race(n) -> String:
 	if n == 1:
@@ -121,6 +119,7 @@ func _on_choice_3_pressed() -> void:
 	%height2.text = "5ft 0in"
 	%height3.text = "6ft 0in"
 	%height4.text = "7ft 0in"
+	%"height-grid".show()
 	
 
 func _on_choice_4_pressed() -> void:
@@ -148,6 +147,7 @@ func _on_choice_4_pressed() -> void:
 	%height5.text = "4ft 4in"
 	%height6.text = "4ft 8in"
 	%height7.text = "6ft 0in"
+	%"height-grid".show()
 
 func _on_choice_5_pressed() -> void:
 	## Gather Race info
