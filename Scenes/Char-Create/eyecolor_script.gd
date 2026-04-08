@@ -36,6 +36,27 @@ func gather_eye_color(n):
 		playerEyeColor = "unknownSkinColor"
 		return playerEyeColor
 
+func display_hair_color():
+	if playerRace == "Slyme":
+		playerHairColor = playerSkinColor
+		%"hairlength-grid".show()
+		%"context-text".text = "Your " + playerEyeColor.toLowerCase() + "eyes look lovely in the morning light. 
+		\nIt takes them a while to figure out the colour of your hair... Looking a little closer, you notice that your " + playerHairColor.toLowerCase() + " hair is the same as your transluscent " + playerSkinColor.toLowerCase() + " skin."
+		%hairlength1.text = "Short"
+		%hairlength1.text = "Medium"
+		%hairlength1.text = "Long"
+	else:
+		%"haircolor-grid".show()
+		%"context-text".text = "Your " + playerEyeColor.toLowerCase() + " eyes look lovely in the morning light. 
+		\nIt takes them a while to figure out the colour of your hair..."
+		%haircolor1.text = "Brown"
+		%haircolor2.text = "Black"
+		%haircolor3.text = "Aubern"
+		%haircolor4.text = "Red"
+		%haircolor5.text = "Orange"
+		%haircolor6.text = "Blonde"
+		%haircolor7.text = "Silver"
+		%haircolor8.text = "White"
 
 ## Signals
 func _on_eyecolor_1_pressed() -> void:
@@ -47,6 +68,7 @@ func _on_eyecolor_1_pressed() -> void:
 	%"eyecolor-grid".hide()
 	
 	## Prepare and display new elements
+	display_hair_color()
 
 
 func _on_eyecolor_2_pressed() -> void:
@@ -58,6 +80,7 @@ func _on_eyecolor_2_pressed() -> void:
 	%"eyecolor-grid".hide()
 	
 	## Prepare and display new elements
+	display_hair_color()
 
 
 func _on_eyecolor_3_pressed() -> void:
@@ -69,6 +92,7 @@ func _on_eyecolor_3_pressed() -> void:
 	%"eyecolor-grid".hide()
 	
 	## Prepare and display new elements
+	display_hair_color()
 
 
 func _on_eyecolor_4_pressed() -> void:
@@ -80,6 +104,7 @@ func _on_eyecolor_4_pressed() -> void:
 	%"eyecolor-grid".hide()
 	
 	## Prepare and display new elements
+	display_hair_color()
 
 
 func _on_eyecolor_5_pressed() -> void:
@@ -91,6 +116,7 @@ func _on_eyecolor_5_pressed() -> void:
 	%"eyecolor-grid".hide()
 	
 	## Prepare and display new elements
+	display_hair_color()
 
 
 func _on_eyecolor_6_pressed() -> void:
@@ -102,6 +128,7 @@ func _on_eyecolor_6_pressed() -> void:
 	%"eyecolor-grid".hide()
 	
 	## Prepare and display new elements
+	display_hair_color()
 
 
 func _on_eyecolor_7_pressed() -> void:
@@ -113,3 +140,4 @@ func _on_eyecolor_7_pressed() -> void:
 	%"eyecolor-grid".hide()
 	
 	## Prepare and display new elements
+	display_hair_color()

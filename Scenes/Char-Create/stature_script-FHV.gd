@@ -39,7 +39,7 @@ func displaySkinColorChoice() -> void:
 		%"skincolor3-FHVE".text = "Dark"
 		%"skincolor4-FHVE".text = "Ebony"
 		%"stature-grid-FHV".hide()
-		%"context-text".text = "After letting your eyes take note of your " + playerStature + " figure, \ntaking note of your skin too..."
+		%"context-text".text = "After letting your eyes take note of your " + playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
 	elif playerRace == "Human":
 		%"skincolor1-FHVE".text = "Light"
@@ -47,7 +47,7 @@ func displaySkinColorChoice() -> void:
 		%"skincolor3-FHVE".text = "Dark"
 		%"skincolor4-FHVE".text = "Ebony"
 		%"stature-grid-FHV".hide()
-		%"context-text".text = "After letting your eyes take note of your " + playerStature + " figure, \ntaking note of your skin too..."
+		%"context-text".text = "After letting your eyes take note of your " + playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
 	elif playerRace == "Vulpine":
 		%"skincolor1-FHVE".text = "Light"
@@ -55,7 +55,7 @@ func displaySkinColorChoice() -> void:
 		%"skincolor3-FHVE".text = "Dark"
 		%"skincolor4-FHVE".text = "Ebony"
 		%"stature-grid-FHV".hide()
-		%"context-text".text = "After letting your eyes take note of your " + playerStature + " figure, \ntaking note of your skin too..."
+		%"context-text".text = "After letting your eyes take note of your " + playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
 	elif playerRace == "Slyme":
 		%"skincolor1-S".text = "Green"
@@ -65,7 +65,7 @@ func displaySkinColorChoice() -> void:
 		%"skincolor5-S".text = "Yellow"
 		%"skincolor6-S".text = "Orange"
 		%"stature-grid-S".hide()
-		%"context-text".text = "After letting your eyes take note of your " + playerStature + " figure, \ntaking note of your skin too..."
+		%"context-text".text = "After letting your eyes take note of your " + playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridS".show()
 	elif playerRace == "Equine":
 		%"skincolor1-FHVE".text = "Light"
@@ -73,7 +73,7 @@ func displaySkinColorChoice() -> void:
 		%"skincolor3-FHVE".text = "Dark"
 		%"skincolor4-FHVE".text = "Ebony"
 		%"stature-grid-E".hide()
-		%"context-text".text = "After letting your eyes take note of your " + playerStature + " figure, \ntaking note of your skin too..."
+		%"context-text".text = "After letting your eyes take note of your " + playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
 
 
@@ -82,13 +82,6 @@ func _on_stature_1_pressed() -> void:
 	## Gather stature Info
 	gather_stature_FHV(1)
 	print(playerStature)
-	
-	## Disconnect stature choices
-	%stature1.pressed.disconnect(_on_stature_1_pressed)
-	%stature2.pressed.disconnect(_on_stature_2_pressed)
-	%stature3.pressed.disconnect(_on_stature_3_pressed)
-	%stature4.pressed.disconnect(_on_stature_4_pressed)
-	%stature5.pressed.disconnect(_on_stature_5_pressed)
 	
 	## Hide unused elements
 	%"stature-grid-FHV".hide()
@@ -101,13 +94,6 @@ func _on_stature_2_pressed() -> void:
 	gather_stature_FHV(2)
 	print(playerStature)
 	
-	## Disconnect stature choices
-	%stature1.pressed.disconnect(_on_stature_1_pressed)
-	%stature2.pressed.disconnect(_on_stature_2_pressed)
-	%stature3.pressed.disconnect(_on_stature_3_pressed)
-	%stature4.pressed.disconnect(_on_stature_4_pressed)
-	%stature5.pressed.disconnect(_on_stature_5_pressed)
-	
 	## Hide unused elements
 	%"stature-grid-FHV".hide()
 	
@@ -118,13 +104,6 @@ func _on_stature_3_pressed() -> void:
 	## Gather stature Info
 	gather_stature_FHV(3)
 	print(playerStature)
-	
-	## Disconnect stature choices
-	%stature1.pressed.disconnect(_on_stature_1_pressed)
-	%stature2.pressed.disconnect(_on_stature_2_pressed)
-	%stature3.pressed.disconnect(_on_stature_3_pressed)
-	%stature4.pressed.disconnect(_on_stature_4_pressed)
-	%stature5.pressed.disconnect(_on_stature_5_pressed)
 	
 	## Hide unused elements
 	%"stature-grid-FHV".hide()
@@ -137,13 +116,6 @@ func _on_stature_4_pressed() -> void:
 	gather_stature_FHV(4)
 	print(playerStature)
 	
-	## Disconnect stature choices
-	%stature1.pressed.disconnect(_on_stature_1_pressed)
-	%stature2.pressed.disconnect(_on_stature_2_pressed)
-	%stature3.pressed.disconnect(_on_stature_3_pressed)
-	%stature4.pressed.disconnect(_on_stature_4_pressed)
-	%stature5.pressed.disconnect(_on_stature_5_pressed)
-	
 	## Hide unused elements
 	%"stature-grid-FHV".hide()
 	
@@ -155,15 +127,8 @@ func _on_stature_5_pressed() -> void:
 	gather_stature_FHV(5)
 	print(playerStature)
 	
-	## Disconnect stature choices
-	%stature1.pressed.disconnect(_on_stature_1_pressed)
-	%stature2.pressed.disconnect(_on_stature_2_pressed)
-	%stature3.pressed.disconnect(_on_stature_3_pressed)
-	%stature4.pressed.disconnect(_on_stature_4_pressed)
-	%stature5.pressed.disconnect(_on_stature_5_pressed)
-	
 	## Hide unused elements
 	%"stature-grid-FHV".hide()
-	displaySkinColorChoice()
 	
 	## Prepare and display new elements
+	displaySkinColorChoice()

@@ -44,7 +44,6 @@ func displayStatureChoice() -> void:
 		%stature3.text = "Average"
 		%stature4.text = "Strong"
 		%stature5.text = "Thickset"
-		%"height-grid".hide()
 		%"context-text".text = "Huh... " + playerHeight + " aint so bad. \nYour eyes glance over your body, your tired mind trying to figure out the shape through your hazy vision."
 		%"stature-grid-FHV".show()
 	elif playerRace == "Human":
@@ -53,7 +52,6 @@ func displayStatureChoice() -> void:
 		%stature3.text = "Average"
 		%stature4.text = "Strong"
 		%stature5.text = "Thickset"
-		%"height-grid".hide()
 		%"context-text".text = "Huh... " + playerHeight + " aint so bad. \nYour eyes glance over your body, your tired mind trying to figure out the shape through your hazy vision."
 		%"stature-grid-FHV".show()
 	elif playerRace == "Vulpine":
@@ -62,19 +60,16 @@ func displayStatureChoice() -> void:
 		%stature3.text = "Average"
 		%stature4.text = "Strong"
 		%stature5.text = "Thickset"
-		%"height-grid".hide()
 		%"context-text".text = "Huh... " + playerHeight + " aint so bad. \nYour eyes glance over your body, your tired mind trying to figure out the shape through your hazy vision."
 		%"stature-grid-FHV".show()
 	elif playerRace == "Slyme":
 		%"stature1-S".text = "Bubbly"
-		%"height-grid".hide()
 		%"context-text".text = "Huh... " + playerHeight + " aint so bad. \nYour eyes glance over your body, your tired mind trying to figure out the shape through your hazy vision."
 		%"stature-grid-S".show()
 	elif playerRace == "Equine":
 		%"stature1-E".text = "Average"
 		%"stature2-E".text = "Strong"
 		%"stature3-E".text = "Thick Set"
-		%"height-grid".hide()
 		%"context-text".text = "Huh... " + playerHeight + " aint so bad. \nYour eyes glance over your body, your tired mind trying to figure out the shape through your hazy vision."
 		%"stature-grid-E".show()
 

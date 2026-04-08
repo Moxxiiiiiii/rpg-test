@@ -6,7 +6,11 @@
 [ext_resource type="Script" uid="uid://paayy5a4cn5x" path="res://Scenes/Char-Create/felynx_chover.gd" id="3_dm4fs"]
 [ext_resource type="Script" uid="uid://bqg4mk0fxgrtw" path="res://Scenes/Char-Create/height_script.gd" id="4_d0b7a"]
 [ext_resource type="Script" uid="uid://dnfloy4easy0w" path="res://Scenes/Char-Create/human_chover.gd" id="4_dm4fs"]
+[ext_resource type="Script" uid="uid://bkth655t2k06j" path="res://Scenes/Char-Create/dicksize_e_script.gd" id="4_kircn"]
+[ext_resource type="Script" uid="uid://c18iwt0fvis3h" path="res://Scenes/Char-Create/haircolor_script.gd" id="4_uemx7"]
+[ext_resource type="Script" uid="uid://c2tot5qjnilth" path="res://Scenes/Char-Create/hairlength_script.gd" id="4_vje74"]
 [ext_resource type="Script" uid="uid://mr6bsmpb474" path="res://Scenes/Char-Create/stature_script-FHV.gd" id="5_5blr1"]
+[ext_resource type="Script" uid="uid://bc5k6uxgosthg" path="res://Scenes/Char-Create/dicksize_fhvs_script.gd" id="5_6ndy6"]
 [ext_resource type="Script" uid="uid://c5t2f6yornfa7" path="res://Scenes/Char-Create/slyme_chover.gd" id="5_xyf3y"]
 [ext_resource type="Script" uid="uid://o1eadqliu1yi" path="res://Scenes/Char-Create/stature_script_s.gd" id="6_vc7we"]
 [ext_resource type="Script" uid="uid://dbwwjr0o7nwbj" path="res://Scenes/Char-Create/vulpine_chover.gd" id="6_vgbrb"]
@@ -116,27 +120,39 @@ offset_bottom = 442.0
 theme_override_font_sizes/font_size = 26
 script = ExtResource("3_77fi1")
 
-[node name="eyecolor-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="4" unique_id=590675628]
+[node name="dicksizeE-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="4" unique_id=1855902437]
+script = ExtResource("4_kircn")
+
+[node name="dicksizeFHVS-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="5" unique_id=313122542]
+script = ExtResource("5_6ndy6")
+
+[node name="hairlength-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="6" unique_id=95459031]
+script = ExtResource("4_vje74")
+
+[node name="haircolor-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="7" unique_id=1016799989]
+script = ExtResource("4_uemx7")
+
+[node name="eyecolor-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="8" unique_id=590675628]
 script = ExtResource("10_wecu7")
 
-[node name="height-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="5" unique_id=1794551858]
+[node name="height-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="9" unique_id=1794551858]
 unique_name_in_owner = true
 script = ExtResource("4_d0b7a")
 
-[node name="stature-script-FHV" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="6" unique_id=1389740892]
+[node name="stature-script-FHV" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="10" unique_id=1389740892]
 script = ExtResource("5_5blr1")
 
-[node name="stature-script-S" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="7" unique_id=2112023532]
+[node name="stature-script-S" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" index="0" unique_id=2112023532]
 script = ExtResource("6_vc7we")
 
-[node name="stature-script-E" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="8" unique_id=1563225192]
+[node name="stature-script-E" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" index="1" unique_id=1563225192]
 script = ExtResource("7_2ttx1")
 
-[node name="skincolor-script-FHVE" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="9" unique_id=259527182]
-script = ExtResource("8_uxmki")
-
-[node name="skincolor-script-S" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="10" unique_id=1639088648]
+[node name="skincolor-script-S" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="11" unique_id=1639088648]
 script = ExtResource("9_wecu7")
+
+[node name="skincolor-script-FHVE" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-S" index="0" unique_id=259527182]
+script = ExtResource("8_uxmki")
 
 [node name="choice-grid" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="0" unique_id=1025699463]
 unique_name_in_owner = true
@@ -755,6 +771,293 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
+[node name="haircolor-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="8" unique_id=518931123]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="haircolor1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="0" unique_id=1961057198]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="haircolor2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="1" unique_id=626215947]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="haircolor3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="2" unique_id=805659332]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="haircolor4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="3" unique_id=945622754]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="haircolor5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="4" unique_id=135135851]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="haircolor6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="5" unique_id=1935432333]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="haircolor7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="6" unique_id=1940949215]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="haircolor8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="7" unique_id=471781237]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="9" unique_id=564952758]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="hairlength1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="0" unique_id=357515686]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="1" unique_id=958713731]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="2" unique_id=2011850317]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="3" unique_id=356569511]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="4" unique_id=1935905982]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="5" unique_id=1387573558]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="6" unique_id=1605099548]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="7" unique_id=1041386071]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize-gridFHVS" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="10" unique_id=1514500508]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="dicksize1FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="0" unique_id=1195782285]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize2FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="1" unique_id=807898498]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize3FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="2" unique_id=99029105]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize4FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="3" unique_id=1267168062]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize5FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="4" unique_id=1264554241]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize6FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="5" unique_id=1764543410]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize7FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="6" unique_id=1913297318]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize8FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="7" unique_id=28546873]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize-gridE" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="11" unique_id=1224593663]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="dicksize1E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="0" unique_id=291726032]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize2E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="1" unique_id=2030667462]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize3E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="2" unique_id=1075556721]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize4E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="3" unique_id=1930617944]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize5E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="4" unique_id=619103688]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize6E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="5" unique_id=22181114]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize7E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="6" unique_id=386870747]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize8E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="7" unique_id=2111235796]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
 [node name="class-variables" type="Node" parent="." index="1" unique_id=892205861]
 script = ExtResource("11_3yepr")
 
@@ -786,14 +1089,14 @@ script = ExtResource("11_3yepr")
 [connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV/stature3" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" method="_on_stature_3_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV/stature4" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" method="_on_stature_4_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV/stature5" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" method="_on_stature_5_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S/stature1-S" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-S" method="_on_stature_1s_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E/stature1-E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-E" method="_on_stature_1e_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E/stature2-E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-E" method="_on_stature_2e_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E/stature3-E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-E" method="_on_stature_3e_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE/skincolor1-FHVE" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-FHVE" method="_on_skincolor_1fhve_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE/skincolor2-FHVE" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-FHVE" method="_on_skincolor_2fhve_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE/skincolor3-FHVE" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-FHVE" method="_on_skincolor_3fhve_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE/skincolor4-FHVE" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-FHVE" method="_on_skincolor_4fhve_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S/stature1-S" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV/stature-script-S" method="_on_stature_1s_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E/stature1-E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV/stature-script-E" method="_on_stature_1e_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E/stature2-E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV/stature-script-E" method="_on_stature_2e_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E/stature3-E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV/stature-script-E" method="_on_stature_3e_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE/skincolor1-FHVE" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-S/skincolor-script-FHVE" method="_on_skincolor_1fhve_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE/skincolor2-FHVE" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-S/skincolor-script-FHVE" method="_on_skincolor_2fhve_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE/skincolor3-FHVE" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-S/skincolor-script-FHVE" method="_on_skincolor_3fhve_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE/skincolor4-FHVE" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-S/skincolor-script-FHVE" method="_on_skincolor_4fhve_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS/skincolor1-S" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-S" method="_on_skincolor_1s_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS/skincolor2-S" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-S" method="_on_skincolor_2s_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS/skincolor3-S" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-S" method="_on_skincolor_3s_pressed"]
@@ -807,3 +1110,26 @@ script = ExtResource("11_3yepr")
 [connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid/eyecolor5" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/eyecolor-script" method="_on_eyecolor_5_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid/eyecolor6" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/eyecolor-script" method="_on_eyecolor_6_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid/eyecolor7" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/eyecolor-script" method="_on_eyecolor_7_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid/haircolor1" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/haircolor-script" method="_on_haircolor_1_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid/haircolor2" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/haircolor-script" method="_on_haircolor_2_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid/haircolor3" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/haircolor-script" method="_on_haircolor_3_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid/haircolor4" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/haircolor-script" method="_on_haircolor_4_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid/haircolor5" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/haircolor-script" method="_on_haircolor_5_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid/haircolor6" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/haircolor-script" method="_on_haircolor_6_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid/haircolor7" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/haircolor-script" method="_on_haircolor_7_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid/haircolor8" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/haircolor-script" method="_on_haircolor_8_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid/hairlength1" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/hairlength-script" method="_on_hairlength_1_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid/hairlength2" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/hairlength-script" method="_on_hairlength_2_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid/hairlength3" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/hairlength-script" method="_on_hairlength_3_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS/dicksize1FHVS" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeFHVS-script" method="_on_dicksize_1fhvs_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS/dicksize2FHVS" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeFHVS-script" method="_on_dicksize_2fhvs_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS/dicksize3FHVS" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeFHVS-script" method="_on_dicksize_3fhvs_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS/dicksize4FHVS" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeFHVS-script" method="_on_dicksize_4fhvs_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS/dicksize5FHVS" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeFHVS-script" method="_on_dicksize_5fhvs_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS/dicksize6FHVS" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeFHVS-script" method="_on_dicksize_6fhvs_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE/dicksize1E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeE-script" method="_on_dicksize_1e_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE/dicksize2E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeE-script" method="_on_dicksize_2e_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE/dicksize3E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeE-script" method="_on_dicksize_3e_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE/dicksize4E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeE-script" method="_on_dicksize_4e_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE/dicksize5E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeE-script" method="_on_dicksize_5e_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE/dicksize6E" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeE-script" method="_on_dicksize_6e_pressed"]
