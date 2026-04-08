@@ -34,6 +34,18 @@ func gather_skin_color_S(n):
 		playerSkinColor = "unknownSkinColor"
 		return playerSkinColor
 
+func display_eye_color():
+	%"eyecolor-grid".show()
+	%"context-text".text = "Your eyes bounce from your body back to your eyes... What colour were they again?"
+	%eyecolor1.text = "Brown"
+	%eyecolor2.text = "Blue"
+	%eyecolor3.text = "Gold"
+	%eyecolor4.text = "Green"
+	%eyecolor5.text = "Purple"
+	%eyecolor6.text = "Red"
+	%eyecolor7.text = "Black"
+
+
 ## Signals
 func _on_skincolor_1s_pressed() -> void:
 	## Gather Skin Color Info
@@ -41,8 +53,10 @@ func _on_skincolor_1s_pressed() -> void:
 	print(playerSkinColor)
 	
 	## Hide unused elements
+	%"skincolor-gridS".hide()
 	
 	## Prepare and display new elements
+	display_eye_color()
 
 func _on_skincolor_2s_pressed() -> void:
 	## Gather Skin Color Info
@@ -50,8 +64,10 @@ func _on_skincolor_2s_pressed() -> void:
 	print(playerSkinColor)
 	
 	## Hide unused elements
+	%"skincolor-gridS".hide()
 	
 	## Prepare and display new elements
+	display_eye_color()
 
 func _on_skincolor_3s_pressed() -> void:
 	## Gather Skin Color Info
@@ -59,8 +75,10 @@ func _on_skincolor_3s_pressed() -> void:
 	print(playerSkinColor)
 	
 	## Hide unused elements
+	%"skincolor-gridS".hide()
 	
 	## Prepare and display new elements
+	display_eye_color()
 
 func _on_skincolor_4s_pressed() -> void:
 	## Gather Skin Color Info
@@ -68,8 +86,10 @@ func _on_skincolor_4s_pressed() -> void:
 	print(playerSkinColor)
 	
 	## Hide unused elements
+	%"skincolor-gridS".hide()
 	
 	## Prepare and display new elements
+	display_eye_color()
 
 func _on_skincolor_5s_pressed() -> void:
 	## Gather Skin Color Info
@@ -77,8 +97,10 @@ func _on_skincolor_5s_pressed() -> void:
 	print(playerSkinColor)
 	
 	## Hide unused elements
+	%"skincolor-gridS".hide()
 	
 	## Prepare and display new elements
+	display_eye_color()
 
 func _on_skincolor_6s_pressed() -> void:
 	## Gather Skin Color Info
@@ -86,5 +108,7 @@ func _on_skincolor_6s_pressed() -> void:
 	print(playerSkinColor)
 	
 	## Hide unused elements
+	%"skincolor-gridS".hide()
 	
 	## Prepare and display new elements
+	display_eye_color()

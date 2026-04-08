@@ -34,8 +34,19 @@ func gather_skin_color_FHVE(n):
 		playerSkinColor = %"skincolor4-FHVE".text
 		return playerSkinColor
 	else:
-		playerStature = "unknownSkinColor"
+		playerSkinColor = "unknownSkinColor"
 		return playerSkinColor
+
+func display_eye_color():
+	%"eyecolor-grid".show()
+	%"context-text".text = "Your eyes bounce from your " + playerSkinColor + " skin back to your eyes... What colour were they again?"
+	%eyecolor1.text = "Brown"
+	%eyecolor2.text = "Blue"
+	%eyecolor3.text = "Gold"
+	%eyecolor4.text = "Green"
+	%eyecolor5.text = "Purple"
+	%eyecolor6.text = "Red"
+	%eyecolor7.text = "Black"
 
 ## Signals
 func _on_skincolor_1fhve_pressed() -> void:
@@ -44,8 +55,10 @@ func _on_skincolor_1fhve_pressed() -> void:
 	print(playerSkinColor)
 	
 	## Hide unused elements
+	%"skincolor-gridFHVE".hide()
 	
 	## Prepare and display new elements
+	display_eye_color()
 
 func _on_skincolor_2fhve_pressed() -> void:
 	## Gather Skin Color Info
@@ -53,8 +66,10 @@ func _on_skincolor_2fhve_pressed() -> void:
 	print(playerSkinColor)
 	
 	## Hide unused elements
+	%"skincolor-gridFHVE".hide()
 	
 	## Prepare and display new elements
+	display_eye_color()
 
 func _on_skincolor_3fhve_pressed() -> void:
 	## Gather Skin Color Info
@@ -62,8 +77,10 @@ func _on_skincolor_3fhve_pressed() -> void:
 	print(playerSkinColor)
 	
 	## Hide unused elements
+	%"skincolor-gridFHVE".hide()
 	
 	## Prepare and display new elements
+	display_eye_color()
 
 func _on_skincolor_4fhve_pressed() -> void:
 	## Gather Skin Color Info
@@ -71,5 +88,7 @@ func _on_skincolor_4fhve_pressed() -> void:
 	print(playerSkinColor)
 	
 	## Hide unused elements
+	%"skincolor-gridFHVE".hide()
 	
 	## Prepare and display new elements
+	display_eye_color()

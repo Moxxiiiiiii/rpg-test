@@ -33,6 +33,7 @@ func displaySkinColorChoice() -> void:
 		%"skincolor4-FHVE".text = "Ebony"
 		%"skincolor5-FHVE".text = "Thickset"
 		%"stature-grid-FHV".hide()
+		%"context-text".text = "After letting your eyes take note of your " + playerStature + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
 	elif playerRace == "Human":
 		%"skincolor1-FHVE".text = "Light"
@@ -41,6 +42,7 @@ func displaySkinColorChoice() -> void:
 		%"skincolor4-FHVE".text = "Ebony"
 		%"skincolor5-FHVE".text = "Thickset"
 		%"stature-grid-FHV".hide()
+		%"context-text".text = "After letting your eyes take note of your " + playerStature + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
 	elif playerRace == "Vulpine":
 		%"skincolor1-FHVE".text = "Light"
@@ -49,6 +51,7 @@ func displaySkinColorChoice() -> void:
 		%"skincolor4-FHVE".text = "Ebony"
 		%"skincolor5-FHVE".text = "Thickset"
 		%"stature-grid-FHV".hide()
+		%"context-text".text = "After letting your eyes take note of your " + playerStature + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
 	elif playerRace == "Slyme":
 		%"skincolor1-S".text = "Green"
@@ -58,6 +61,7 @@ func displaySkinColorChoice() -> void:
 		%"skincolor5-S".text = "Yellow"
 		%"skincolor6-S".text = "Orange"
 		%"stature-grid-S".hide()
+		%"context-text".text = "After letting your eyes take note of your " + playerStature + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridS".show()
 	elif playerRace == "Equine":
 		%"skincolor1-FHVE".text = "Light"
@@ -66,6 +70,7 @@ func displaySkinColorChoice() -> void:
 		%"skincolor4-FHVE".text = "Ebony"
 		%"skincolor5-FHVE".text = "Thickset"
 		%"stature-grid-E".hide()
+		%"context-text".text = "After letting your eyes take note of your " + playerStature + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
 
 ## Signals

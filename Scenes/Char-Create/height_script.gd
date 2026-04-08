@@ -45,6 +45,7 @@ func displayStatureChoice() -> void:
 		%stature4.text = "Strong"
 		%stature5.text = "Thickset"
 		%"height-grid".hide()
+		%"context-text".text = "Huh... " + playerHeight + " aint so bad. \nYour eyes glance over your body, your tired mind trying to figure out the shape through your hazy vision."
 		%"stature-grid-FHV".show()
 	elif playerRace == "Human":
 		%stature1.text = "Frail"
@@ -53,6 +54,7 @@ func displayStatureChoice() -> void:
 		%stature4.text = "Strong"
 		%stature5.text = "Thickset"
 		%"height-grid".hide()
+		%"context-text".text = "Huh... " + playerHeight + " aint so bad. \nYour eyes glance over your body, your tired mind trying to figure out the shape through your hazy vision."
 		%"stature-grid-FHV".show()
 	elif playerRace == "Vulpine":
 		%stature1.text = "Frail"
@@ -61,31 +63,25 @@ func displayStatureChoice() -> void:
 		%stature4.text = "Strong"
 		%stature5.text = "Thickset"
 		%"height-grid".hide()
+		%"context-text".text = "Huh... " + playerHeight + " aint so bad. \nYour eyes glance over your body, your tired mind trying to figure out the shape through your hazy vision."
 		%"stature-grid-FHV".show()
 	elif playerRace == "Slyme":
 		%"stature1-S".text = "Bubbly"
 		%"height-grid".hide()
+		%"context-text".text = "Huh... " + playerHeight + " aint so bad. \nYour eyes glance over your body, your tired mind trying to figure out the shape through your hazy vision."
 		%"stature-grid-S".show()
 	elif playerRace == "Equine":
 		%"stature1-E".text = "Average"
 		%"stature2-E".text = "Strong"
 		%"stature3-E".text = "Thick Set"
 		%"height-grid".hide()
+		%"context-text".text = "Huh... " + playerHeight + " aint so bad. \nYour eyes glance over your body, your tired mind trying to figure out the shape through your hazy vision."
 		%"stature-grid-E".show()
 
 func _on_height_1_pressed() -> void:
 	## Gather Height Info
 	gather_height(1)
 	print(playerHeight)
-	
-	## Disconnect height choices
-	%height1.pressed.disconnect(_on_height_1_pressed)
-	%height2.pressed.disconnect(_on_height_2_pressed)
-	%height3.pressed.disconnect(_on_height_3_pressed)
-	%height4.pressed.disconnect(_on_height_4_pressed)
-	%height5.pressed.disconnect(_on_height_5_pressed)
-	%height6.pressed.disconnect(_on_height_6_pressed)
-	%height7.pressed.disconnect(_on_height_7_pressed)
 	
 	## Hide unused elements
 	%"height-grid".hide()
@@ -99,15 +95,6 @@ func _on_height_2_pressed() -> void:
 	gather_height(2)
 	print(playerHeight)
 	
-	## Disconnect height choices
-	%height1.pressed.disconnect(_on_height_1_pressed)
-	%height2.pressed.disconnect(_on_height_2_pressed)
-	%height3.pressed.disconnect(_on_height_3_pressed)
-	%height4.pressed.disconnect(_on_height_4_pressed)
-	%height5.pressed.disconnect(_on_height_5_pressed)
-	%height6.pressed.disconnect(_on_height_6_pressed)
-	%height7.pressed.disconnect(_on_height_7_pressed)
-	
 	## Hide unused elements
 	%"height-grid".hide()
 	
@@ -119,15 +106,6 @@ func _on_height_3_pressed() -> void:
 	## Gather Height Info
 	gather_height(3)
 	print(playerHeight)
-	
-	## Disconnect height choices
-	%height1.pressed.disconnect(_on_height_1_pressed)
-	%height2.pressed.disconnect(_on_height_2_pressed)
-	%height3.pressed.disconnect(_on_height_3_pressed)
-	%height4.pressed.disconnect(_on_height_4_pressed)
-	%height5.pressed.disconnect(_on_height_5_pressed)
-	%height6.pressed.disconnect(_on_height_6_pressed)
-	%height7.pressed.disconnect(_on_height_7_pressed)
 	
 	## Hide unused elements
 	%"height-grid".hide()
@@ -142,15 +120,6 @@ func _on_height_4_pressed() -> void:
 	gather_height(4)
 	print(playerHeight)
 	
-	## Disconnect height choices
-	%height1.pressed.disconnect(_on_height_1_pressed)
-	%height2.pressed.disconnect(_on_height_2_pressed)
-	%height3.pressed.disconnect(_on_height_3_pressed)
-	%height4.pressed.disconnect(_on_height_4_pressed)
-	%height5.pressed.disconnect(_on_height_5_pressed)
-	%height6.pressed.disconnect(_on_height_6_pressed)
-	%height7.pressed.disconnect(_on_height_7_pressed)
-	
 	## Hide unused elements
 	%"height-grid".hide()
 	
@@ -162,15 +131,6 @@ func _on_height_5_pressed() -> void:
 	## Gather Height Info
 	gather_height(5)
 	print(playerHeight)
-	
-	## Disconnect height choices
-	%height1.pressed.disconnect(_on_height_1_pressed)
-	%height2.pressed.disconnect(_on_height_2_pressed)
-	%height3.pressed.disconnect(_on_height_3_pressed)
-	%height4.pressed.disconnect(_on_height_4_pressed)
-	%height5.pressed.disconnect(_on_height_5_pressed)
-	%height6.pressed.disconnect(_on_height_6_pressed)
-	%height7.pressed.disconnect(_on_height_7_pressed)
 	
 	## Hide unused elements
 	%"height-grid".hide()
@@ -184,15 +144,6 @@ func _on_height_6_pressed() -> void:
 	gather_height(6)
 	print(playerHeight)
 	
-	## Disconnect height choices
-	%height1.pressed.disconnect(_on_height_1_pressed)
-	%height2.pressed.disconnect(_on_height_2_pressed)
-	%height3.pressed.disconnect(_on_height_3_pressed)
-	%height4.pressed.disconnect(_on_height_4_pressed)
-	%height5.pressed.disconnect(_on_height_5_pressed)
-	%height6.pressed.disconnect(_on_height_6_pressed)
-	%height7.pressed.disconnect(_on_height_7_pressed)
-	
 	## Hide unused elements
 	%"height-grid".hide()
 	
@@ -204,15 +155,6 @@ func _on_height_7_pressed() -> void:
 	## Gather Height Info
 	gather_height(7)
 	print(playerHeight)
-	
-	## Disconnect height choices
-	%height1.pressed.disconnect(_on_height_1_pressed)
-	%height2.pressed.disconnect(_on_height_2_pressed)
-	%height3.pressed.disconnect(_on_height_3_pressed)
-	%height4.pressed.disconnect(_on_height_4_pressed)
-	%height5.pressed.disconnect(_on_height_5_pressed)
-	%height6.pressed.disconnect(_on_height_6_pressed)
-	%height7.pressed.disconnect(_on_height_7_pressed)
 	
 	## Hide unused elements
 	%"height-grid".hide()
