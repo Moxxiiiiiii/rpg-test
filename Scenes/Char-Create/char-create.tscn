@@ -89,7 +89,7 @@ expand_margin_left = 4.0
 expand_margin_top = 4.0
 
 [sub_resource type="GDScript" id="GDScript_6ndy6"]
-script/source = "class_name classVariables extends Node
+script/source = "extends Node
 
 ## Declare variables to reference for character characteristics as class.
 static var playerHeight
