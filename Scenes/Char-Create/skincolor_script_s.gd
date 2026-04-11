@@ -1,5 +1,5 @@
 ## Define inherit and variables
-extends classVariables
+extends Node
 @onready var skincolor_grid_s: GridContainer = %"skincolor-gridS"
 @onready var skincolor_1_s: Button = %"skincolor1-S"
 @onready var skincolor_2_s: Button = %"skincolor2-S"
@@ -13,26 +13,26 @@ extends classVariables
 ## Define Functions for Signals
 func gather_skin_color_S(n):
 	if n == 1:
-		playerSkinColor = %"skincolor1-S".text
-		return playerSkinColor
+		ClassVariables.playerSkinColor = %"skincolor1-S".text
+		return ClassVariables.playerSkinColor
 	if n == 2:
-		playerSkinColor = %"skincolor2-S".text
-		return playerSkinColor
+		ClassVariables.playerSkinColor = %"skincolor2-S".text
+		return ClassVariables.playerSkinColor
 	if n == 3:
-		playerSkinColor = %"skincolor3-S".text
-		return playerSkinColor
+		ClassVariables.playerSkinColor = %"skincolor3-S".text
+		return ClassVariables.playerSkinColor
 	if n == 4:
-		playerSkinColor = %"skincolor4-S".text
-		return playerSkinColor
+		ClassVariables.playerSkinColor = %"skincolor4-S".text
+		return ClassVariables.playerSkinColor
 	if n == 5:
-		playerSkinColor = %"skincolor5-S".text
-		return playerSkinColor
+		ClassVariables.playerSkinColor = %"skincolor5-S".text
+		return ClassVariables.playerSkinColor
 	if n == 6:
-		playerSkinColor = %"skincolor6-S".text
-		return playerSkinColor
+		ClassVariables.playerSkinColor = %"skincolor6-S".text
+		return ClassVariables.playerSkinColor
 	else:
-		playerSkinColor = "unknownSkinColor"
-		return playerSkinColor
+		ClassVariables.playerSkinColor = "unknownSkinColor"
+		return ClassVariables.playerSkinColor
 
 func display_eye_color():
 	%"eyecolor-grid".show()
@@ -50,7 +50,7 @@ func display_eye_color():
 func _on_skincolor_1s_pressed() -> void:
 	## Gather Skin Color Info
 	gather_skin_color_S(1)
-	print(playerSkinColor)
+	print(ClassVariables.playerSkinColor)
 	
 	## Hide unused elements
 	%"skincolor-gridS".hide()
@@ -61,7 +61,7 @@ func _on_skincolor_1s_pressed() -> void:
 func _on_skincolor_2s_pressed() -> void:
 	## Gather Skin Color Info
 	gather_skin_color_S(2)
-	print(playerSkinColor)
+	print(ClassVariables.playerSkinColor)
 	
 	## Hide unused elements
 	%"skincolor-gridS".hide()
@@ -72,7 +72,7 @@ func _on_skincolor_2s_pressed() -> void:
 func _on_skincolor_3s_pressed() -> void:
 	## Gather Skin Color Info
 	gather_skin_color_S(3)
-	print(playerSkinColor)
+	print(ClassVariables.playerSkinColor)
 	
 	## Hide unused elements
 	%"skincolor-gridS".hide()
@@ -83,7 +83,7 @@ func _on_skincolor_3s_pressed() -> void:
 func _on_skincolor_4s_pressed() -> void:
 	## Gather Skin Color Info
 	gather_skin_color_S(4)
-	print(playerSkinColor)
+	print(ClassVariables.playerSkinColor)
 	
 	## Hide unused elements
 	%"skincolor-gridS".hide()
@@ -94,7 +94,7 @@ func _on_skincolor_4s_pressed() -> void:
 func _on_skincolor_5s_pressed() -> void:
 	## Gather Skin Color Info
 	gather_skin_color_S(5)
-	print(playerSkinColor)
+	print(ClassVariables.playerSkinColor)
 	
 	## Hide unused elements
 	%"skincolor-gridS".hide()
@@ -105,7 +105,7 @@ func _on_skincolor_5s_pressed() -> void:
 func _on_skincolor_6s_pressed() -> void:
 	## Gather Skin Color Info
 	gather_skin_color_S(6)
-	print(playerSkinColor)
+	print(ClassVariables.playerSkinColor)
 	
 	## Hide unused elements
 	%"skincolor-gridS".hide()

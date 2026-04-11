@@ -1,5 +1,5 @@
 ## Declare inherit and variables
-extends classVariables
+extends Node
 @onready var stature_grid_e: GridContainer = %"stature-grid-E"
 @onready var stature_1_e: Button = %"stature1-E"
 @onready var stature_2_e: Button = %"stature2-E"
@@ -13,47 +13,47 @@ extends classVariables
 ## Define Functions for Signals
 func gather_stature_E(n):
 	if n == 1:
-		playerStature = %"stature1-E".text
-		return playerStature
+		ClassVariables.playerStature = %"stature1-E".text
+		return ClassVariables.playerStature
 	if n == 2:
-		playerStature = %"stature2-E".text
-		return playerStature
+		ClassVariables.playerStature = %"stature2-E".text
+		return ClassVariables.playerStature
 	if n == 3:
-		playerStature = %"stature3-E".text
-		return playerStature
+		ClassVariables.playerStature = %"stature3-E".text
+		return ClassVariables.playerStature
 	else:
-		playerStature = "unknownStature"
-		return playerStature
+		ClassVariables.playerStature = "unknownStature"
+		return ClassVariables.playerStature
 
 func displaySkinColorChoice() -> void:
-	if playerRace == "Felynx":
+	if ClassVariables.playerRace == "Felynx":
 		%"skincolor1-FHVE".text = "Light"
 		%"skincolor2-FHVE".text = "Tanned"
 		%"skincolor3-FHVE".text = "Dark"
 		%"skincolor4-FHVE".text = "Ebony"
 		%"skincolor5-FHVE".text = "Thickset"
 		%"stature-grid-FHV".hide()
-		%"context-text".text = "After letting your eyes take note of your " + playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
+		%"context-text".text = "After letting your eyes take note of your " + ClassVariables.playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
-	elif playerRace == "Human":
+	elif ClassVariables.playerRace == "Human":
 		%"skincolor1-FHVE".text = "Light"
 		%"skincolor2-FHVE".text = "Tanned"
 		%"skincolor3-FHVE".text = "Dark"
 		%"skincolor4-FHVE".text = "Ebony"
 		%"skincolor5-FHVE".text = "Thickset"
 		%"stature-grid-FHV".hide()
-		%"context-text".text = "After letting your eyes take note of your " + playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
+		%"context-text".text = "After letting your eyes take note of your " + ClassVariables.playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
-	elif playerRace == "Vulpine":
+	elif ClassVariables.playerRace == "Vulpine":
 		%"skincolor1-FHVE".text = "Light"
 		%"skincolor2-FHVE".text = "Tanned"
 		%"skincolor3-FHVE".text = "Dark"
 		%"skincolor4-FHVE".text = "Ebony"
 		%"skincolor5-FHVE".text = "Thickset"
 		%"stature-grid-FHV".hide()
-		%"context-text".text = "After letting your eyes take note of your " + playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
+		%"context-text".text = "After letting your eyes take note of your " + ClassVariables.playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
-	elif playerRace == "Slyme":
+	elif ClassVariables.playerRace == "Slyme":
 		%"skincolor1-S".text = "Green"
 		%"skincolor2-S".text = "Blue"
 		%"skincolor3-S".text = "Red"
@@ -61,23 +61,23 @@ func displaySkinColorChoice() -> void:
 		%"skincolor5-S".text = "Yellow"
 		%"skincolor6-S".text = "Orange"
 		%"stature-grid-S".hide()
-		%"context-text".text = "After letting your eyes take note of your " + playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
+		%"context-text".text = "After letting your eyes take note of your " + ClassVariables.playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridS".show()
-	elif playerRace == "Equine":
+	elif ClassVariables.playerRace == "Equine":
 		%"skincolor1-FHVE".text = "Light"
 		%"skincolor2-FHVE".text = "Tanned"
 		%"skincolor3-FHVE".text = "Dark"
 		%"skincolor4-FHVE".text = "Ebony"
 		%"skincolor5-FHVE".text = "Thickset"
 		%"stature-grid-E".hide()
-		%"context-text".text = "After letting your eyes take note of your " + playerStature.to_lower() + " figure, \ntaking note of your skin too..."
+		%"context-text".text = "After letting your eyes take note of your " + ClassVariables.playerStature.to_lower() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
 
 ## Signals
 func _on_stature_1e_pressed() -> void:
 	## Gather stature Info
 	gather_stature_E(1)
-	print(playerStature)
+	print(ClassVariables.playerStature)
 	
 	## Hide unused elements
 	%"stature-grid-E".hide()
@@ -89,7 +89,7 @@ func _on_stature_1e_pressed() -> void:
 func _on_stature_2e_pressed() -> void:
 	## Gather stature Info
 	gather_stature_E(2)
-	print(playerStature)
+	print(ClassVariables.playerStature)
 	
 	## Hide unused elements
 	%"stature-grid-E".hide()
@@ -100,7 +100,7 @@ func _on_stature_2e_pressed() -> void:
 func _on_stature_3e_pressed() -> void:
 	## Gather stature Info
 	gather_stature_E(3)
-	print(playerStature)
+	print(ClassVariables.playerStature)
 	
 	## Hide unused elements
 	%"stature-grid-E".hide()

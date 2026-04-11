@@ -1,5 +1,5 @@
 ## Define inherit and variables
-extends classVariables
+extends Node
 @onready var skincolor_grid_fhve: GridContainer = %"skincolor-gridFHVE"
 @onready var skincolor_1_fhve: Button = %"skincolor1-FHVE"
 @onready var skincolor_2_fhve: Button = %"skincolor2-FHVE"
@@ -22,24 +22,24 @@ extends classVariables
 ## Define functions for signals
 func gather_skin_color_FHVE(n):
 	if n == 1:
-		playerSkinColor = %"skincolor1-FHVE".text
-		return playerSkinColor
+		ClassVariables.playerSkinColor = %"skincolor1-FHVE".text
+		return ClassVariables.playerSkinColor
 	if n == 2:
-		playerSkinColor = %"skincolor2-FHVE".text
-		return playerSkinColor
+		ClassVariables.playerSkinColor = %"skincolor2-FHVE".text
+		return ClassVariables.playerSkinColor
 	if n == 3:
-		playerSkinColor = %"skincolor3-FHVE".text
-		return playerSkinColor
+		ClassVariables.playerSkinColor = %"skincolor3-FHVE".text
+		return ClassVariables.playerSkinColor
 	if n == 4:
-		playerSkinColor = %"skincolor4-FHVE".text
-		return playerSkinColor
+		ClassVariables.playerSkinColor = %"skincolor4-FHVE".text
+		return ClassVariables.playerSkinColor
 	else:
-		playerSkinColor = "unknownSkinColor"
-		return playerSkinColor
+		ClassVariables.playerSkinColor = "unknownSkinColor"
+		return ClassVariables.playerSkinColor
 
 func display_eye_color():
 	%"eyecolor-grid".show()
-	%"context-text".text = "Your eyes bounce from your " + playerStature.to_lower() + " body back to your eyes... What colour were they again?"
+	%"context-text".text = "Your eyes bounce from your " + ClassVariables.playerStature.to_lower() + " body back to your eyes... What colour were they again?"
 	%eyecolor1.text = "Brown"
 	%eyecolor2.text = "Blue"
 	%eyecolor3.text = "Gold"
@@ -52,7 +52,7 @@ func display_eye_color():
 func _on_skincolor_1fhve_pressed() -> void:
 	## Gather Skin Color Info
 	gather_skin_color_FHVE(1)
-	print(playerSkinColor)
+	print(ClassVariables.playerSkinColor)
 	
 	## Hide unused elements
 	%"skincolor-gridFHVE".hide()
@@ -63,7 +63,7 @@ func _on_skincolor_1fhve_pressed() -> void:
 func _on_skincolor_2fhve_pressed() -> void:
 	## Gather Skin Color Info
 	gather_skin_color_FHVE(2)
-	print(playerSkinColor)
+	print(ClassVariables.playerSkinColor)
 	
 	## Hide unused elements
 	%"skincolor-gridFHVE".hide()
@@ -74,7 +74,7 @@ func _on_skincolor_2fhve_pressed() -> void:
 func _on_skincolor_3fhve_pressed() -> void:
 	## Gather Skin Color Info
 	gather_skin_color_FHVE(3)
-	print(playerSkinColor)
+	print(ClassVariables.playerSkinColor)
 	
 	## Hide unused elements
 	%"skincolor-gridFHVE".hide()
@@ -85,7 +85,7 @@ func _on_skincolor_3fhve_pressed() -> void:
 func _on_skincolor_4fhve_pressed() -> void:
 	## Gather Skin Color Info
 	gather_skin_color_FHVE(4)
-	print(playerSkinColor)
+	print(ClassVariables.playerSkinColor)
 	
 	## Hide unused elements
 	%"skincolor-gridFHVE".hide()

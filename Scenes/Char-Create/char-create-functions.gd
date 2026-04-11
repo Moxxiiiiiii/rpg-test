@@ -1,4 +1,4 @@
-extends classVariables
+extends Node
 @onready var choice_grid: GridContainer = %"choice-grid"
 @onready var choice_1: Button = %choice1
 @onready var choice_2: Button = %choice2
@@ -24,29 +24,28 @@ extends classVariables
 
 func gather_race(n) -> String:
 	if n == 1:
-		playerRace = %choice1.text
-		return playerRace
+		ClassVariables.playerRace = %choice1.text
+		return ClassVariables.playerRace
 	if n == 2:
-		playerRace = %choice2.text
-		return playerRace
+		ClassVariables.playerRace = %choice2.text
+		return ClassVariables.playerRace
 	if n == 3:
-		playerRace = %choice3.text
-		return playerRace
+		ClassVariables.playerRace = %choice3.text
+		return ClassVariables.playerRace
 	if n == 4:
-		playerRace = %choice4.text
-		return playerRace
+		ClassVariables.playerRace = %choice4.text
+		return ClassVariables.playerRace
 	if n == 5:
-		playerRace = %choice5.text
-		return playerRace
+		ClassVariables.playerRace = %choice5.text
+		return ClassVariables.playerRace
 	else:
-		playerRace = "unknownRace"
-		return playerRace
+		ClassVariables.playerRace = "unknownRace"
+		return ClassVariables.playerRace
 
 ## Beginning creation for Felynx
 func _on_choice_1_pressed() -> void:
 	## Gather Race info
 	gather_race(1)
-	print(playerRace)
 	
 	## Hide unused elements
 	%"name-confirm".hide()
@@ -73,7 +72,7 @@ func _on_choice_1_pressed() -> void:
 func _on_choice_2_pressed() -> void:
 	## Gather Race info
 	gather_race(2)
-	print(playerRace)
+	print(ClassVariables.playerRace)
 	
 	## Disconnect race choices
 	%choice1.pressed.disconnect(_on_choice_1_pressed)
@@ -100,7 +99,7 @@ func _on_choice_2_pressed() -> void:
 func _on_choice_3_pressed() -> void:
 	## Gather Race info
 	gather_race(3)
-	print(playerRace)
+	print(ClassVariables.playerRace)
 	
 	## Disconnect race choices
 	%choice1.pressed.disconnect(_on_choice_1_pressed)
@@ -125,7 +124,7 @@ func _on_choice_3_pressed() -> void:
 func _on_choice_4_pressed() -> void:
 	## Gather Race info
 	gather_race(4)
-	print(playerRace)
+	print(ClassVariables.playerRace)
 	
 	## Disconnect race choices
 	%choice1.pressed.disconnect(_on_choice_1_pressed)
@@ -152,7 +151,7 @@ func _on_choice_4_pressed() -> void:
 func _on_choice_5_pressed() -> void:
 	## Gather Race info
 	gather_race(5)
-	print(playerRace)
+	print(ClassVariables.playerRace)
 	
 	## Disconnect race choices
 	%choice1.pressed.disconnect(_on_choice_1_pressed)

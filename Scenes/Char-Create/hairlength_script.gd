@@ -1,5 +1,5 @@
 ## Define inherit and variables
-extends classVariables
+extends Node
 @onready var hairlength_grid: GridContainer = %"hairlength-grid"
 @onready var hairlength_1: Button = %hairlength1
 @onready var hairlength_2: Button = %hairlength2
@@ -8,17 +8,17 @@ extends classVariables
 ## Define functions for Signals
 func gather_hair_length(n):
 	if n == 1:
-		playerHairLength = %hairlength1.text
-		return playerHairLength
+		ClassVariables.playerHairLength = %hairlength1.text
+		return ClassVariables.playerHairLength
 	elif n == 2:
-		playerHairLength = %hairlength2.text
-		return playerHairLength
+		ClassVariables.playerHairLength = %hairlength2.text
+		return ClassVariables.playerHairLength
 	elif n == 3:
-		playerHairLength = %hairlength3.text
-		return playerHairLength
+		ClassVariables.playerHairLength = %hairlength3.text
+		return ClassVariables.playerHairLength
 
 func displayDickSizeChoice():
-	if playerRace == "Equine":
+	if ClassVariables.playerRace == "Equine":
 		%dicksize1E.text = "Vagina"
 		%dicksize2E.text = "6 inch"
 		%dicksize3E.text = "7 inch"
@@ -41,7 +41,7 @@ func displayDickSizeChoice():
 func _on_hairlength_1_pressed() -> void:
 	## Gather Hair Length Info
 	gather_hair_length(1)
-	print(playerHairLength)
+	print(ClassVariables.playerHairLength)
 	
 	## Hide unused elements
 	%"hairlength-grid".hide()
@@ -53,7 +53,7 @@ func _on_hairlength_1_pressed() -> void:
 func _on_hairlength_2_pressed() -> void:
 	## Gather Hair Length Info
 	gather_hair_length(2)
-	print(playerHairLength)
+	print(ClassVariables.playerHairLength)
 	
 	## Hide unused elements
 	%"hairlength-grid".hide()
@@ -65,7 +65,7 @@ func _on_hairlength_2_pressed() -> void:
 func _on_hairlength_3_pressed() -> void:
 	## Gather Hair Length Info
 	gather_hair_length(3)
-	print(playerHairLength)
+	print(ClassVariables.playerHairLength)
 	
 	## Hide unused elements
 	%"hairlength-grid".hide()

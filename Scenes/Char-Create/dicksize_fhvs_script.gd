@@ -1,5 +1,5 @@
 ## Define inherit and variables
-extends classVariables
+extends Node
 @onready var dicksize_grid_fhvs: GridContainer = %"dicksize-gridFHVS"
 @onready var dicksize_1fhvs: Button = %dicksize1FHVS
 @onready var dicksize_2fhvs: Button = %dicksize2FHVS
@@ -11,23 +11,23 @@ extends classVariables
 ## Define functions for signals
 func gather_dick_size_FHVS(n):
 	if n == 1:
-		playerDickSize = %dicksize1FHVS.text
-		return playerDickSize
+		ClassVariables.playerDickSize = %dicksize1FHVS.text
+		return ClassVariables.playerDickSize
 	elif n == 2:
-		playerDickSize = %dicksize2FHVS.text
-		return playerDickSize
+		ClassVariables.playerDickSize = %dicksize2FHVS.text
+		return ClassVariables.playerDickSize
 	elif n == 3:
-		playerDickSize = %dicksize3FHVS.text
-		return playerDickSize
+		ClassVariables.playerDickSize = %dicksize3FHVS.text
+		return ClassVariables.playerDickSize
 	elif n == 4:
-		playerDickSize = %dicksize4FHVS.text
-		return playerDickSize
+		ClassVariables.playerDickSize = %dicksize4FHVS.text
+		return ClassVariables.playerDickSize
 	elif n == 5:
-		playerDickSize = %dicksize5FHVS.text
-		return playerDickSize
+		ClassVariables.playerDickSize = %dicksize5FHVS.text
+		return ClassVariables.playerDickSize
 	elif n == 6:
-		playerDickSize = %dicksize6FHVS.text
-		return playerDickSize
+		ClassVariables.playerDickSize = %dicksize6FHVS.text
+		return ClassVariables.playerDickSize
 
 func display_chest_size():
 	%"chestsize-grid".show()
@@ -38,18 +38,18 @@ func display_chest_size():
 	%chestsize5.text = "D Cup"
 	%chestsize6.text = "E Cup"
 	
-	if playerDickSize == "Vagina":
+	if ClassVariables.playerDickSize == "Vagina":
 		%"context-text".text = "Your cheeks flush as they take note of your quim, tucked right where it belongs.
 You shake your head a little trying to clear your lewd thoughts, eyes slowly making their way up to your chest..."
 	else:
-		%"context-text".text = "Your cheeks flush as they take note of your " + playerDickSize + " prick, resting right where it belongs.
+		%"context-text".text = "Your cheeks flush as they take note of your " + ClassVariables.playerDickSize + " prick, resting right where it belongs.
 You shake your head a little trying to clear your lewd thoughts, eyes slowly making their way up to your chest..."
 
 ## Signals
 func _on_dicksize_1fhvs_pressed() -> void:
 	## Gather Dick Size Info
 	gather_dick_size_FHVS(1)
-	print(playerDickSize)
+	print(ClassVariables.playerDickSize)
 	
 	## Hide unused elements
 	%"dicksize-gridFHVS".hide()
@@ -61,7 +61,7 @@ func _on_dicksize_1fhvs_pressed() -> void:
 func _on_dicksize_2fhvs_pressed() -> void:
 	## Gather Dick Size Info
 	gather_dick_size_FHVS(2)
-	print(playerDickSize)
+	print(ClassVariables.playerDickSize)
 	
 	## Hide unused elements
 	%"dicksize-gridFHVS".hide()
@@ -73,7 +73,7 @@ func _on_dicksize_2fhvs_pressed() -> void:
 func _on_dicksize_3fhvs_pressed() -> void:
 	## Gather Dick Size Info
 	gather_dick_size_FHVS(3)
-	print(playerDickSize)
+	print(ClassVariables.playerDickSize)
 	
 	## Hide unused elements
 	%"dicksize-gridFHVS".hide()
@@ -85,7 +85,7 @@ func _on_dicksize_3fhvs_pressed() -> void:
 func _on_dicksize_4fhvs_pressed() -> void:
 	## Gather Dick Size Info
 	gather_dick_size_FHVS(4)
-	print(playerDickSize)
+	print(ClassVariables.playerDickSize)
 	
 	## Hide unused elements
 	%"dicksize-gridFHVS".hide()
@@ -97,7 +97,7 @@ func _on_dicksize_4fhvs_pressed() -> void:
 func _on_dicksize_5fhvs_pressed() -> void:
 	## Gather Dick Size Info
 	gather_dick_size_FHVS(5)
-	print(playerDickSize)
+	print(ClassVariables.playerDickSize)
 	
 	## Hide unused elements
 	%"dicksize-gridFHVS".hide()
@@ -109,7 +109,7 @@ func _on_dicksize_5fhvs_pressed() -> void:
 func _on_dicksize_6fhvs_pressed() -> void:
 	## Gather Dick Size Info
 	gather_dick_size_FHVS(6)
-	print(playerDickSize)
+	print(ClassVariables.playerDickSize)
 	
 	## Hide unused elements
 	%"dicksize-gridFHVS".hide()

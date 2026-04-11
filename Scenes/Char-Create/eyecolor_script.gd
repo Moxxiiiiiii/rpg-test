@@ -1,5 +1,5 @@
 ## Define inherit and variables
-extends classVariables
+extends Node
 @onready var eyecolor_grid_2: GridContainer = %"eyecolor-grid"
 @onready var eyecolor_1: Button = %eyecolor1
 @onready var eyecolor_2: Button = %eyecolor2
@@ -12,42 +12,42 @@ extends classVariables
 ## Define functions for Signals
 func gather_eye_color(n):
 	if n == 1:
-		playerEyeColor = %eyecolor1.text
-		return playerEyeColor
+		ClassVariables.playerEyeColor = %eyecolor1.text
+		return ClassVariables.playerEyeColor
 	if n == 2:
-		playerEyeColor = %eyecolor2.text
-		return playerEyeColor
+		ClassVariables.playerEyeColor = %eyecolor2.text
+		return ClassVariables.playerEyeColor
 	if n == 3:
-		playerEyeColor = %eyecolor3.text
-		return playerEyeColor
+		ClassVariables.playerEyeColor = %eyecolor3.text
+		return ClassVariables.playerEyeColor
 	if n == 4:
-		playerEyeColor = %eyecolor4.text
-		return playerEyeColor
+		ClassVariables.playerEyeColor = %eyecolor4.text
+		return ClassVariables.playerEyeColor
 	if n == 5:
-		playerEyeColor = %eyecolor5.text
-		return playerEyeColor
+		ClassVariables.playerEyeColor = %eyecolor5.text
+		return ClassVariables.playerEyeColor
 	if n == 6:
-		playerEyeColor = %eyecolor6.text
-		return playerEyeColor
+		ClassVariables.playerEyeColor = %eyecolor6.text
+		return ClassVariables.playerEyeColor
 	if n == 7:
-		playerEyeColor = %eyecolor7.text
-		return playerEyeColor
+		ClassVariables.playerEyeColor = %eyecolor7.text
+		return ClassVariables.playerEyeColor
 	else:
-		playerEyeColor = "unknownSkinColor"
-		return playerEyeColor
+		ClassVariables.playerEyeColor = "unknownSkinColor"
+		return ClassVariables.playerEyeColor
 
 func display_hair_color():
-	if playerRace == "Slyme":
-		playerHairColor = playerSkinColor
+	if ClassVariables.playerRace == "Slyme":
+		ClassVariables.playerHairColor =ClassVariables. playerSkinColor
 		%"hairlength-grid".show()
-		%"context-text".text = "Your " + playerEyeColor.to_lower() + "eyes look lovely in the morning light. 
-		\nIt takes them a while to figure out the colour of your hair... Looking a little closer, you notice that your " + playerHairColor.to_lower() + " hair is the same as your transluscent " + playerSkinColor.to_lower() + " skin."
+		%"context-text".text = "Your " + ClassVariables.playerEyeColor.to_lower() + "eyes look lovely in the morning light. 
+		\nIt takes them a while to figure out the colour of your hair... Looking a little closer, you notice that your " + ClassVariables.playerHairColor.to_lower() + " hair is the same as your transluscent " + ClassVariables.playerSkinColor.to_lower() + " skin."
 		%hairlength1.text = "Short"
 		%hairlength1.text = "Medium"
 		%hairlength1.text = "Long"
 	else:
 		%"haircolor-grid".show()
-		%"context-text".text = "Your " + playerEyeColor.to_lower() + " eyes look lovely in the morning light. 
+		%"context-text".text = "Your " + ClassVariables.playerEyeColor.to_lower() + " eyes look lovely in the morning light. 
 		\nIt takes them a while to figure out the colour of your hair..."
 		%haircolor1.text = "Brown"
 		%haircolor2.text = "Black"
@@ -62,7 +62,7 @@ func display_hair_color():
 func _on_eyecolor_1_pressed() -> void:
 	## Gather Eye Color Info
 	gather_eye_color(1)
-	print(playerEyeColor)
+	print(ClassVariables.playerEyeColor)
 	
 	## Hide unused elements
 	%"eyecolor-grid".hide()
@@ -74,7 +74,7 @@ func _on_eyecolor_1_pressed() -> void:
 func _on_eyecolor_2_pressed() -> void:
 	## Gather Eye Color Info
 	gather_eye_color(2)
-	print(playerEyeColor)
+	print(ClassVariables.playerEyeColor)
 	
 	## Hide unused elements
 	%"eyecolor-grid".hide()
@@ -86,7 +86,7 @@ func _on_eyecolor_2_pressed() -> void:
 func _on_eyecolor_3_pressed() -> void:
 	## Gather Eye Color Info
 	gather_eye_color(3)
-	print(playerEyeColor)
+	print(ClassVariables.playerEyeColor)
 	
 	## Hide unused elements
 	%"eyecolor-grid".hide()
@@ -98,7 +98,7 @@ func _on_eyecolor_3_pressed() -> void:
 func _on_eyecolor_4_pressed() -> void:
 	## Gather Eye Color Info
 	gather_eye_color(4)
-	print(playerEyeColor)
+	print(ClassVariables.playerEyeColor)
 	
 	## Hide unused elements
 	%"eyecolor-grid".hide()
@@ -110,7 +110,7 @@ func _on_eyecolor_4_pressed() -> void:
 func _on_eyecolor_5_pressed() -> void:
 	## Gather Eye Color Info
 	gather_eye_color(5)
-	print(playerEyeColor)
+	print(ClassVariables.playerEyeColor)
 	
 	## Hide unused elements
 	%"eyecolor-grid".hide()
@@ -122,7 +122,7 @@ func _on_eyecolor_5_pressed() -> void:
 func _on_eyecolor_6_pressed() -> void:
 	## Gather Eye Color Info
 	gather_eye_color(6)
-	print(playerEyeColor)
+	print(ClassVariables.playerEyeColor)
 	
 	## Hide unused elements
 	%"eyecolor-grid".hide()
@@ -134,7 +134,7 @@ func _on_eyecolor_6_pressed() -> void:
 func _on_eyecolor_7_pressed() -> void:
 	## Gather Eye Color Info
 	gather_eye_color(7)
-	print(playerEyeColor)
+	print(ClassVariables.playerEyeColor)
 	
 	## Hide unused elements
 	%"eyecolor-grid".hide()
