@@ -43,8 +43,8 @@ func display_hair_color():
 		%"context-text".text = "Your " + ClassVariables.playerEyeColor.to_lower() + "eyes look lovely in the morning light. 
 		\nIt takes them a while to figure out the colour of your hair... Looking a little closer, you notice that your " + ClassVariables.playerHairColor.to_lower() + " hair is the same as your transluscent " + ClassVariables.playerSkinColor.to_lower() + " skin."
 		%hairlength1.text = "Short"
-		%hairlength1.text = "Medium"
-		%hairlength1.text = "Long"
+		%hairlength2.text = "Medium"
+		%hairlength3.text = "Long"
 	else:
 		%"haircolor-grid".show()
 		%"context-text".text = "Your " + ClassVariables.playerEyeColor.to_lower() + " eyes look lovely in the morning light. 

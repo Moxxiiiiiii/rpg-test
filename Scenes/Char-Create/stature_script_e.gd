@@ -31,7 +31,6 @@ func displaySkinColorChoice() -> void:
 		%"skincolor2-FHVE".text = "Tanned"
 		%"skincolor3-FHVE".text = "Dark"
 		%"skincolor4-FHVE".text = "Ebony"
-		%"skincolor5-FHVE".text = "Thickset"
 		%"stature-grid-FHV".hide()
 		%"context-text".text = "After letting your eyes take note of your " + ClassVariables.playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
@@ -40,7 +39,6 @@ func displaySkinColorChoice() -> void:
 		%"skincolor2-FHVE".text = "Tanned"
 		%"skincolor3-FHVE".text = "Dark"
 		%"skincolor4-FHVE".text = "Ebony"
-		%"skincolor5-FHVE".text = "Thickset"
 		%"stature-grid-FHV".hide()
 		%"context-text".text = "After letting your eyes take note of your " + ClassVariables.playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
@@ -49,7 +47,6 @@ func displaySkinColorChoice() -> void:
 		%"skincolor2-FHVE".text = "Tanned"
 		%"skincolor3-FHVE".text = "Dark"
 		%"skincolor4-FHVE".text = "Ebony"
-		%"skincolor5-FHVE".text = "Thickset"
 		%"stature-grid-FHV".hide()
 		%"context-text".text = "After letting your eyes take note of your " + ClassVariables.playerStature.toLowerCase() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
@@ -68,7 +65,6 @@ func displaySkinColorChoice() -> void:
 		%"skincolor2-FHVE".text = "Tanned"
 		%"skincolor3-FHVE".text = "Dark"
 		%"skincolor4-FHVE".text = "Ebony"
-		%"skincolor5-FHVE".text = "Thickset"
 		%"stature-grid-E".hide()
 		%"context-text".text = "After letting your eyes take note of your " + ClassVariables.playerStature.to_lower() + " figure, \ntaking note of your skin too..."
 		%"skincolor-gridFHVE".show()
