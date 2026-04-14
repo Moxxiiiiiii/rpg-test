@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bjook310bfvjk"]
 
-[ext_resource type="PackedScene" uid="uid://lju8rbqgrtpf" path="res://design-documents/game-backup.tscn" id="1_qmw5f"]
+[ext_resource type="Script" uid="uid://d2ivr5n07vxj5" path="res://hsl_organise.gd" id="1_hupkp"]
 [ext_resource type="Script" uid="uid://ctuihkekjs1ga" path="res://Scenes/Char-Create/char-create-functions.gd" id="2_ea161"]
 [ext_resource type="Script" uid="uid://dqcxh1xis5qfi" path="res://Scenes/Char-Create/name_confirm.gd" id="3_77fi1"]
 [ext_resource type="Script" uid="uid://paayy5a4cn5x" path="res://Scenes/Char-Create/felynx_chover.gd" id="3_dm4fs"]
@@ -23,6 +23,35 @@
 [ext_resource type="Script" uid="uid://c1in10hdh58wk" path="res://Scenes/Char-Create/skincolor_script_fhve.gd" id="8_uxmki"]
 [ext_resource type="Script" uid="uid://b7sxvphjt17ia" path="res://Scenes/Char-Create/skincolor_script_s.gd" id="9_wecu7"]
 [ext_resource type="Script" uid="uid://csnk3ume6bq1y" path="res://Scenes/Char-Create/eyecolor_script.gd" id="10_wecu7"]
+
+[sub_resource type="GDScript" id="GDScript_80nbo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwb40"]
+bg_color = Color(0.036378834, 0.29938552, 0.3831717, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80nbo"]
+bg_color = Color(1.92523e-06, 0.5406126, 0.63022685, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_feb5d"]
+bg_color = Color(0.11349284, 0.105085455, 0.107226364, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc0e3"]
+bg_color = Color(0.3562991, 0.59489346, 0.72295207, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2o6t"]
+bg_color = Color(0.34301907, 0.59691554, 0.72678554, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jktm"]
+bg_color = Color(0.30807704, 0.59817183, 0.7549823, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sm0n8"]
 bg_color = Color(0.19607843, 0.29803923, 0.34901962, 1)
@@ -89,9 +118,326 @@ corner_radius_bottom_left = 8
 expand_margin_left = 4.0
 expand_margin_top = 4.0
 
-[node name="Game" unique_id=1115383842 instance=ExtResource("1_qmw5f")]
+[sub_resource type="GDScript" id="GDScript_mwb40"]
+script/source = "extends Node
+"
 
-[node name="context-text" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box" parent_id_path=PackedInt32Array(227325637) index="0" unique_id=531777206]
+[node name="Game" type="Control" unique_id=1115383842]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_80nbo")
+
+[node name="Background" type="PanelContainer" parent="." unique_id=891389138]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mwb40")
+metadata/panel = Color(0.87070334, 0.64264154, 0.7187438, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=1214410044]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="left-side" type="VBoxContainer" parent="Background/MarginContainer" unique_id=450056710]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Stats and Info" type="PanelContainer" parent="Background/MarginContainer/left-side" unique_id=2060551672]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_80nbo")
+
+[node name="player-icon" type="Panel" parent="Background/MarginContainer/left-side/Stats and Info" unique_id=354420284]
+custom_minimum_size = Vector2(0, 225)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_feb5d")
+
+[node name="stat-block" type="PanelContainer" parent="Background/MarginContainer/left-side/Stats and Info" unique_id=2110029301]
+custom_minimum_size = Vector2(0, 680)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_fc0e3")
+
+[node name="stat-grid" type="GridContainer" parent="Background/MarginContainer/left-side/Stats and Info/stat-block" unique_id=1915130410]
+layout_mode = 2
+
+[node name="date-time-block" type="Panel" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid" unique_id=1852334067]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="date-time-grid" type="GridContainer" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/date-time-block" unique_id=1523498126]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="date-text" type="RichTextLabel" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/date-time-block/date-time-grid" unique_id=939431861]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 22
+text = "Date: xx/xx/xx"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="time-text" type="RichTextLabel" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/date-time-block/date-time-grid" unique_id=1058606319]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 22
+text = "Time: 00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="stat-panel" type="Panel" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid" unique_id=495768608]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="stat-container" type="VBoxContainer" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel" unique_id=1548636497]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="Panel2" type="Panel" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container" unique_id=1871277871]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="hsl-organise" type="VBoxContainer" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/Panel2" unique_id=2048061792]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+script = ExtResource("1_hupkp")
+
+[node name="vital-title" type="Label" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/Panel2/hsl-organise" unique_id=1207712666]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Vital Stats"
+horizontal_alignment = 1
+
+[node name="health-text" type="Label" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/Panel2/hsl-organise" unique_id=1761830370]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Health: min / max "
+horizontal_alignment = 1
+
+[node name="shield-text" type="Label" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/Panel2/hsl-organise" unique_id=1532206359]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Shields: min / max"
+horizontal_alignment = 1
+
+[node name="lust-text" type="Label" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/Panel2/hsl-organise" unique_id=997086038]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Lust: min / max"
+horizontal_alignment = 1
+
+[node name="attribute-box" type="Panel" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container" unique_id=104589860]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.02
+
+[node name="attribute-organise" type="VBoxContainer" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box" unique_id=1262904981]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 11
+
+[node name="attributes-title" type="Label" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=1427200986]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Attributes"
+horizontal_alignment = 1
+
+[node name="strength-text" type="Label" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=811438313]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Strength: str"
+horizontal_alignment = 1
+
+[node name="intelligence-text" type="Label" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=1741619428]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Intelligence: int"
+horizontal_alignment = 1
+
+[node name="charisma-text" type="Label" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=2040215062]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Charisma: chr"
+horizontal_alignment = 1
+
+[node name="agility-text" type="Label" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=507350312]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Agility: agi"
+horizontal_alignment = 1
+
+[node name="inventory-box" type="Panel" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container" unique_id=370480325]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.56
+
+[node name="inventory-organise" type="VBoxContainer" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/inventory-box" unique_id=1893976711]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 18
+
+[node name="Control" type="Control" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/inventory-box/inventory-organise" unique_id=583595816]
+layout_mode = 2
+
+[node name="credits-text" type="Label" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/inventory-box/inventory-organise" unique_id=1670548803]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Credits: cred"
+horizontal_alignment = 1
+
+[node name="inventory-button" type="Button" parent="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/inventory-box/inventory-organise" unique_id=908377028]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Inventory"
+
+[node name="Save & Load" type="PanelContainer" parent="Background/MarginContainer/left-side" unique_id=1541108757]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.13
+theme_override_styles/panel = SubResource("StyleBoxFlat_e2o6t")
+
+[node name="save-grid" type="GridContainer" parent="Background/MarginContainer/left-side/Save & Load" unique_id=1962805132]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 13
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="save-box" type="Panel" parent="Background/MarginContainer/left-side/Save & Load/save-grid" unique_id=1489938400]
+custom_minimum_size = Vector2(156, 68)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="save-text" type="RichTextLabel" parent="Background/MarginContainer/left-side/Save & Load/save-grid/save-box" unique_id=810392646]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -25.0
+offset_right = 59.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Save"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="load-box" type="Panel" parent="Background/MarginContainer/left-side/Save & Load/save-grid" unique_id=925142572]
+custom_minimum_size = Vector2(156, 68)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="load-text" type="RichTextLabel" parent="Background/MarginContainer/left-side/Save & Load/save-grid/load-box" unique_id=176979287]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -25.0
+offset_right = 59.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Load"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="right-side" type="VBoxContainer" parent="Background/MarginContainer" unique_id=587265514]
+custom_minimum_size = Vector2(1500, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 2
+
+[node name="Game info" type="PanelContainer" parent="Background/MarginContainer/right-side" unique_id=1285962374]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_80nbo")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/MarginContainer/right-side/Game info" unique_id=1273542832]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="context-box" type="Panel" parent="Background/MarginContainer/right-side/Game info/MarginContainer" unique_id=227325637]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7jktm")
+
+[node name="context-text" type="RichTextLabel" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box" unique_id=531777206]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 1476.0
+offset_bottom = 781.0
+theme_override_font_sizes/normal_font_size = 24
 text = "The sun rises, it's rays of light beaming through the clear glass window hanging just above your bed. It's round, with no visible bars or decorations between - set within a white metallic wall. Your room is decorated fairly plainly, having only been adopted here a month ago by your new caretaker. Your head is too foggy to think much of it right now, so you pick yourself up from your bed and head towards the bathroom.
 
 The doors open and shut automatically as you approach. Despite being made of well varnished wood, you can barely hear them open and shut on their magnetic tracks - leaving only your footsteps populating the wooden hallway and echoey bathroom as head on your way.
@@ -100,7 +446,7 @@ You disrobe sluggishly, getting a good look of yourself in the mirror...
 Who are you?"
 script = ExtResource("2_ea161")
 
-[node name="Name-edit" type="LineEdit" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="2" unique_id=968762565]
+[node name="Name-edit" type="LineEdit" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" unique_id=968762565]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -114,7 +460,7 @@ offset_bottom = -318.0
 theme_override_font_sizes/font_size = 30
 emoji_menu_enabled = false
 
-[node name="name-confirm" type="Label" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="3" unique_id=2053704803]
+[node name="name-confirm" type="Label" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" unique_id=2053704803]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 2.0
@@ -124,53 +470,67 @@ offset_bottom = 442.0
 theme_override_font_sizes/font_size = 26
 script = ExtResource("3_77fi1")
 
-[node name="confirm-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="4" unique_id=361399538]
+[node name="confirm-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" unique_id=361399538]
 script = ExtResource("4_hupkp")
 
-[node name="class-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="5" unique_id=1263577405]
+[node name="class-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" unique_id=1263577405]
 script = ExtResource("4_bynnx")
 
-[node name="gender-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="6" unique_id=1832494788]
+[node name="gender-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" unique_id=1832494788]
 script = ExtResource("4_jlwvk")
 
-[node name="chestsize-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="7" unique_id=1902836086]
+[node name="chestsize-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" unique_id=1902836086]
 script = ExtResource("4_6ndy6")
 
-[node name="dicksizeE-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="8" unique_id=1855902437]
+[node name="dicksizeE-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" unique_id=1855902437]
 script = ExtResource("4_kircn")
 
-[node name="dicksizeFHVS-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeE-script" index="0" unique_id=313122542]
+[node name="dicksizeFHVS-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/dicksizeE-script" unique_id=313122542]
 script = ExtResource("5_6ndy6")
 
-[node name="hairlength-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="9" unique_id=95459031]
+[node name="hairlength-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" unique_id=95459031]
 script = ExtResource("4_vje74")
 
-[node name="haircolor-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="10" unique_id=1016799989]
+[node name="haircolor-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" unique_id=1016799989]
 script = ExtResource("4_uemx7")
 
-[node name="eyecolor-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="11" unique_id=590675628]
+[node name="eyecolor-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" unique_id=590675628]
 script = ExtResource("10_wecu7")
 
-[node name="height-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="12" unique_id=1794551858]
+[node name="height-script" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" unique_id=1794551858]
 unique_name_in_owner = true
 script = ExtResource("4_d0b7a")
 
-[node name="stature-script-FHV" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="13" unique_id=1389740892]
+[node name="stature-script-FHV" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" unique_id=1389740892]
 script = ExtResource("5_5blr1")
 
-[node name="stature-script-S" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" index="0" unique_id=2112023532]
+[node name="stature-script-S" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" unique_id=2112023532]
 script = ExtResource("6_vc7we")
 
-[node name="stature-script-E" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" index="1" unique_id=1563225192]
+[node name="stature-script-E" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/stature-script-FHV" unique_id=1563225192]
 script = ExtResource("7_2ttx1")
 
-[node name="skincolor-script-S" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" index="14" unique_id=1639088648]
+[node name="skincolor-script-S" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text" unique_id=1639088648]
 script = ExtResource("9_wecu7")
 
-[node name="skincolor-script-FHVE" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-S" index="0" unique_id=259527182]
+[node name="skincolor-script-FHVE" type="Node" parent="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/skincolor-script-S" unique_id=259527182]
 script = ExtResource("8_uxmki")
 
-[node name="name-confirm-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="0" unique_id=1270220632]
+[node name="Choices" type="PanelContainer" parent="Background/MarginContainer/right-side" unique_id=461494912]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.13
+theme_override_styles/panel = SubResource("StyleBoxFlat_e2o6t")
+
+[node name="decision-box" type="MarginContainer" parent="Background/MarginContainer/right-side/Choices" unique_id=1306729758]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="name-confirm-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=1270220632]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -179,70 +539,82 @@ theme_override_constants/h_separation = 78
 theme_override_constants/v_separation = 33
 columns = 4
 
-[node name="name1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" index="0" unique_id=2117189701]
+[node name="name1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" unique_id=2117189701]
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="name2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" index="1" unique_id=1199913666]
+[node name="name2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" unique_id=1199913666]
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="name3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" index="2" unique_id=164531540]
+[node name="name3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" unique_id=164531540]
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="name4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" index="3" unique_id=1042818371]
+[node name="name4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" unique_id=1042818371]
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="name5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" index="4" unique_id=1195700378]
+[node name="name5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" unique_id=1195700378]
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="name6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" index="5" unique_id=398787577]
+[node name="name6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" unique_id=398787577]
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="name7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" index="6" unique_id=1449652514]
+[node name="name7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" unique_id=1449652514]
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="name8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" index="7" unique_id=127123958]
+[node name="name8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/name-confirm-grid" unique_id=127123958]
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="choice-grid" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="1" unique_id=1025699463]
+[node name="choice-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=1025699463]
 unique_name_in_owner = true
 visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
 
-[node name="choice1" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="0" unique_id=1702335498]
+[node name="choice1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=1702335498]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
 text = "Felynx"
 
-[node name="felynx-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1" index="0" unique_id=1237904710]
+[node name="felynx-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1" unique_id=1237904710]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -256,11 +628,16 @@ text = "A cat like race of humanoids, sporting fuzzy ears and human-like skin.
 Felynx's are typically short and flexible often found with tails as well as barbed pricks (if they have any)."
 script = ExtResource("3_dm4fs")
 
-[node name="choice2" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="1" unique_id=107526656]
+[node name="choice2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=107526656]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
 text = "Human"
 
-[node name="human-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice2" index="0" unique_id=501399587]
+[node name="human-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice2" unique_id=501399587]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -273,11 +650,16 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ea161")
 text = "Straightforward as they come, humans are average in height, abilities and tendencies."
 script = ExtResource("4_dm4fs")
 
-[node name="choice3" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="2" unique_id=268679704]
+[node name="choice3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=268679704]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
 text = "Slyme"
 
-[node name="slyme-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice3" index="0" unique_id=870136472]
+[node name="slyme-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice3" unique_id=870136472]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -291,11 +673,16 @@ text = "A gooey race of people known for their voluptuous, shifting bodies and h
 They can be almost any size, and feed off of the essence of other creatures."
 script = ExtResource("5_xyf3y")
 
-[node name="choice4" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="3" unique_id=1210305282]
+[node name="choice4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=1210305282]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
 text = "Vulpine"
 
-[node name="vulpine-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice4" index="0" unique_id=818707701]
+[node name="vulpine-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice4" unique_id=818707701]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -309,11 +696,16 @@ text = "A sly, fox like race! Fox kin are known for their sharp wit and cunning.
 Their body's sport fluffy ears and even fluffier tails, and those with members find themselves with large knots."
 script = ExtResource("6_vgbrb")
 
-[node name="choice5" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="4" unique_id=302050046]
+[node name="choice5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=302050046]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
 text = "Equine"
 
-[node name="equine-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5" index="0" unique_id=556973267]
+[node name="equine-chover" type="Label" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice5" unique_id=556973267]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -327,26 +719,7 @@ text = "A large, bulky horse-like race. Endowed and blessed in every way,
 they are known to be gentle in society today despite their impressive assets and constitution."
 script = ExtResource("7_sm0n8")
 
-[node name="choice6" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="5" unique_id=229157224]
-unique_name_in_owner = true
-
-[node name="choice7" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="6" unique_id=183763465]
-unique_name_in_owner = true
-
-[node name="choice8" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" index="7" unique_id=1672160219]
-unique_name_in_owner = true
-
-[node name="height-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="2" unique_id=1607905276]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/h_separation = 78
-theme_override_constants/v_separation = 33
-columns = 4
-
-[node name="height1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="0" unique_id=2113090993]
+[node name="choice6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=229157224]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -354,7 +727,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="height2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="1" unique_id=854475798]
+[node name="choice7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=183763465]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -362,7 +735,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="height3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="2" unique_id=119265329]
+[node name="choice8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=1672160219]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -370,47 +743,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="height4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="3" unique_id=1870600769]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="height5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="4" unique_id=1666203018]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="height6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="5" unique_id=356414535]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="height7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="6" unique_id=1185931364]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="height8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" index="7" unique_id=851617443]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="stature-grid-FHV" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="3" unique_id=1320840365]
+[node name="height-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=1607905276]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -420,7 +753,7 @@ theme_override_constants/h_separation = 78
 theme_override_constants/v_separation = 33
 columns = 4
 
-[node name="stature1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="0" unique_id=1554325169]
+[node name="height1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" unique_id=2113090993]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -428,7 +761,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="1" unique_id=745917867]
+[node name="height2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" unique_id=854475798]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -436,7 +769,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="2" unique_id=519315468]
+[node name="height3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" unique_id=119265329]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -444,7 +777,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="3" unique_id=2125930234]
+[node name="height4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" unique_id=1870600769]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -452,7 +785,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="4" unique_id=1693586174]
+[node name="height5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" unique_id=1666203018]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -460,7 +793,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="5" unique_id=1181235758]
+[node name="height6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" unique_id=356414535]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -468,7 +801,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="6" unique_id=1268394423]
+[node name="height7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" unique_id=1185931364]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -476,7 +809,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" index="7" unique_id=958191102]
+[node name="height8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/height-grid" unique_id=851617443]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -484,81 +817,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature-grid-S" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="4" unique_id=400929298]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/h_separation = 78
-theme_override_constants/v_separation = 33
-columns = 4
-
-[node name="stature1-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="0" unique_id=2041668742]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="stature2-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="1" unique_id=245454321]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="stature3-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="2" unique_id=1296799569]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="stature4-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="3" unique_id=924873109]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="stature5-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="4" unique_id=1405823246]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="stature6-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="5" unique_id=787538736]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="stature7-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="6" unique_id=1239258226]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="stature8-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" index="7" unique_id=1042930061]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="stature-grid-E" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="5" unique_id=1727961296]
+[node name="stature-grid-FHV" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=1320840365]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -568,7 +827,7 @@ theme_override_constants/h_separation = 78
 theme_override_constants/v_separation = 33
 columns = 4
 
-[node name="stature1-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="0" unique_id=1109338374]
+[node name="stature1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" unique_id=1554325169]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -576,7 +835,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature2-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="1" unique_id=1754128712]
+[node name="stature2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" unique_id=745917867]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -584,7 +843,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature3-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="2" unique_id=448850395]
+[node name="stature3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" unique_id=519315468]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -592,7 +851,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature4-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="3" unique_id=1348434190]
+[node name="stature4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" unique_id=2125930234]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -600,7 +859,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature5-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="4" unique_id=447972964]
+[node name="stature5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" unique_id=1693586174]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -608,7 +867,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature6-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="5" unique_id=1124480325]
+[node name="stature6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" unique_id=1181235758]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -616,7 +875,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature7-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="6" unique_id=341936012]
+[node name="stature7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" unique_id=1268394423]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -624,7 +883,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="stature8-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" index="7" unique_id=80229664]
+[node name="stature8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-FHV" unique_id=958191102]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -632,81 +891,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="skincolor-gridFHVE" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="6" unique_id=587196299]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/h_separation = 78
-theme_override_constants/v_separation = 33
-columns = 4
-
-[node name="skincolor1-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" index="0" unique_id=1813309677]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="skincolor2-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" index="1" unique_id=1262559624]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="skincolor3-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" index="2" unique_id=1733253719]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="skincolor4-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" index="3" unique_id=1489231174]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="skincolor5-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" index="4" unique_id=1617078593]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="skincolor6-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" index="5" unique_id=1144828637]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="skincolor7-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" index="6" unique_id=821157407]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="skincolor8-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" index="7" unique_id=1633945047]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="skincolor-gridS" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="7" unique_id=73673680]
+[node name="stature-grid-S" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=400929298]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -716,7 +901,7 @@ theme_override_constants/h_separation = 78
 theme_override_constants/v_separation = 33
 columns = 4
 
-[node name="skincolor1-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" index="0" unique_id=386120938]
+[node name="stature1-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" unique_id=2041668742]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -724,7 +909,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="skincolor2-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" index="1" unique_id=397869726]
+[node name="stature2-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" unique_id=245454321]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -732,7 +917,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="skincolor3-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" index="2" unique_id=176071619]
+[node name="stature3-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" unique_id=1296799569]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -740,7 +925,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="skincolor4-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" index="3" unique_id=1538533799]
+[node name="stature4-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" unique_id=924873109]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -748,7 +933,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="skincolor5-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" index="4" unique_id=1255522981]
+[node name="stature5-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" unique_id=1405823246]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -756,7 +941,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="skincolor6-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" index="5" unique_id=1596092558]
+[node name="stature6-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" unique_id=787538736]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -764,7 +949,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="skincolor7-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" index="6" unique_id=1698836589]
+[node name="stature7-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" unique_id=1239258226]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -772,7 +957,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="skincolor8-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" index="7" unique_id=1136363489]
+[node name="stature8-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-S" unique_id=1042930061]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -780,80 +965,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="eyecolor-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="8" unique_id=387087767]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/h_separation = 78
-theme_override_constants/v_separation = 33
-columns = 4
-
-[node name="eyecolor1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" index="0" unique_id=1948667776]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="eyecolor2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" index="1" unique_id=1860837529]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="eyecolor3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" index="2" unique_id=830181577]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="eyecolor4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" index="3" unique_id=914815569]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="eyecolor5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" index="4" unique_id=1221255290]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="eyecolor6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" index="5" unique_id=535980687]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="eyecolor7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" index="6" unique_id=1484510261]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="eyecolor8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" index="7" unique_id=91139905]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="haircolor-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="9" unique_id=518931123]
+[node name="stature-grid-E" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=1727961296]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -863,7 +975,7 @@ theme_override_constants/h_separation = 78
 theme_override_constants/v_separation = 33
 columns = 4
 
-[node name="haircolor1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="0" unique_id=1961057198]
+[node name="stature1-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" unique_id=1109338374]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -871,7 +983,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="haircolor2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="1" unique_id=626215947]
+[node name="stature2-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" unique_id=1754128712]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -879,7 +991,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="haircolor3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="2" unique_id=805659332]
+[node name="stature3-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" unique_id=448850395]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -887,7 +999,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="haircolor4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="3" unique_id=945622754]
+[node name="stature4-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" unique_id=1348434190]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -895,7 +1007,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="haircolor5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="4" unique_id=135135851]
+[node name="stature5-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" unique_id=447972964]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -903,7 +1015,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="haircolor6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="5" unique_id=1935432333]
+[node name="stature6-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" unique_id=1124480325]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -911,7 +1023,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="haircolor7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="6" unique_id=1940949215]
+[node name="stature7-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" unique_id=341936012]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -919,7 +1031,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="haircolor8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" index="7" unique_id=471781237]
+[node name="stature8-E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/stature-grid-E" unique_id=80229664]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -927,76 +1039,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="hairlength-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="10" unique_id=564952758]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/h_separation = 78
-theme_override_constants/v_separation = 33
-columns = 4
-
-[node name="hairlength1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="0" unique_id=357515686]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="hairlength2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="1" unique_id=958713731]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="hairlength3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="2" unique_id=2011850317]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="hairlength4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="3" unique_id=356569511]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="hairlength5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="4" unique_id=1935905982]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="hairlength6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="5" unique_id=1387573558]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="hairlength7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="6" unique_id=1605099548]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="hairlength8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" index="7" unique_id=1041386071]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="dicksize-gridFHVS" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="11" unique_id=1514500508]
+[node name="skincolor-gridFHVE" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=587196299]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -1006,7 +1049,7 @@ theme_override_constants/h_separation = 78
 theme_override_constants/v_separation = 33
 columns = 4
 
-[node name="dicksize1FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="0" unique_id=1195782285]
+[node name="skincolor1-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" unique_id=1813309677]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1014,7 +1057,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="dicksize2FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="1" unique_id=807898498]
+[node name="skincolor2-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" unique_id=1262559624]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1022,7 +1065,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="dicksize3FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="2" unique_id=99029105]
+[node name="skincolor3-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" unique_id=1733253719]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1030,7 +1073,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="dicksize4FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="3" unique_id=1267168062]
+[node name="skincolor4-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" unique_id=1489231174]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1038,7 +1081,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="dicksize5FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="4" unique_id=1264554241]
+[node name="skincolor5-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" unique_id=1617078593]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1046,7 +1089,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="dicksize6FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="5" unique_id=1764543410]
+[node name="skincolor6-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" unique_id=1144828637]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1054,31 +1097,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="dicksize7FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="6" unique_id=1913297318]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="dicksize8FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" index="7" unique_id=28546873]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="dicksize-gridE" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="12" unique_id=1224593663]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/h_separation = 78
-theme_override_constants/v_separation = 33
-columns = 4
-
-[node name="dicksize1E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="0" unique_id=291726032]
+[node name="skincolor7-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" unique_id=821157407]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1086,7 +1105,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="dicksize2E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="1" unique_id=2030667462]
+[node name="skincolor8-FHVE" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridFHVE" unique_id=1633945047]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1094,53 +1113,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="dicksize3E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="2" unique_id=1075556721]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="dicksize4E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="3" unique_id=1930617944]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="dicksize5E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="4" unique_id=619103688]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="dicksize6E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="5" unique_id=22181114]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="dicksize7E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="6" unique_id=386870747]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="dicksize8E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" index="7" unique_id=2111235796]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="chestsize-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="13" unique_id=1189332544]
+[node name="skincolor-gridS" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=73673680]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -1150,7 +1123,7 @@ theme_override_constants/h_separation = 78
 theme_override_constants/v_separation = 33
 columns = 4
 
-[node name="chestsize1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" index="0" unique_id=1074097970]
+[node name="skincolor1-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" unique_id=386120938]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1158,7 +1131,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="chestsize2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" index="1" unique_id=366092715]
+[node name="skincolor2-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" unique_id=397869726]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1166,7 +1139,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="chestsize3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" index="2" unique_id=1419810755]
+[node name="skincolor3-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" unique_id=176071619]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1174,7 +1147,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="chestsize4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" index="3" unique_id=1618457105]
+[node name="skincolor4-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" unique_id=1538533799]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1182,7 +1155,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="chestsize5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" index="4" unique_id=1424194970]
+[node name="skincolor5-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" unique_id=1255522981]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1190,7 +1163,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="chestsize6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" index="5" unique_id=1346177543]
+[node name="skincolor6-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" unique_id=1596092558]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1198,31 +1171,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="chestsize7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" index="6" unique_id=211902257]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="chestsize8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" index="7" unique_id=1394084879]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="gender-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="14" unique_id=1070846161]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/h_separation = 78
-theme_override_constants/v_separation = 33
-columns = 4
-
-[node name="gender1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" index="0" unique_id=689151178]
+[node name="skincolor7-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" unique_id=1698836589]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1230,7 +1179,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="gender2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" index="1" unique_id=728798743]
+[node name="skincolor8-S" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/skincolor-gridS" unique_id=1136363489]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1238,50 +1187,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="gender3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" index="2" unique_id=1344956110]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="gender4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" index="3" unique_id=43757853]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="gender5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" index="4" unique_id=2063122454]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="gender6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" index="5" unique_id=1500075763]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="gender7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" index="6" unique_id=1583359998]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="gender8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" index="7" unique_id=801038070]
-custom_minimum_size = Vector2(300, 68)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-
-[node name="class-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="15" unique_id=630053050]
+[node name="eyecolor-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=387087767]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -1291,7 +1197,7 @@ theme_override_constants/h_separation = 78
 theme_override_constants/v_separation = 33
 columns = 4
 
-[node name="class1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" index="0" unique_id=1398688919]
+[node name="eyecolor1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" unique_id=1948667776]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1299,7 +1205,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="class2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" index="1" unique_id=1963863494]
+[node name="eyecolor2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" unique_id=1860837529]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1307,7 +1213,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="class3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" index="2" unique_id=949128614]
+[node name="eyecolor3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" unique_id=830181577]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1315,7 +1221,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="class4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" index="3" unique_id=933461628]
+[node name="eyecolor4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" unique_id=914815569]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1323,35 +1229,38 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="class5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" index="4" unique_id=1463210781]
+[node name="eyecolor5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" unique_id=1221255290]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="class6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" index="5" unique_id=1234283395]
+[node name="eyecolor6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" unique_id=535980687]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="class7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" index="6" unique_id=1056257431]
+[node name="eyecolor7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" unique_id=1484510261]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="class8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" index="7" unique_id=393387375]
+[node name="eyecolor8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/eyecolor-grid" unique_id=91139905]
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="confirm-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" parent_id_path=PackedInt32Array(1306729758) index="16" unique_id=472673122]
+[node name="haircolor-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=518931123]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -1361,7 +1270,7 @@ theme_override_constants/h_separation = 78
 theme_override_constants/v_separation = 33
 columns = 4
 
-[node name="confirm1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" index="0" unique_id=1995214435]
+[node name="haircolor1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" unique_id=1961057198]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1369,7 +1278,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="confirm2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" index="1" unique_id=265048187]
+[node name="haircolor2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" unique_id=626215947]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
@@ -1377,47 +1286,548 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="confirm3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" index="2" unique_id=614430699]
+[node name="haircolor3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" unique_id=805659332]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="confirm4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" index="3" unique_id=260255079]
+[node name="haircolor4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" unique_id=945622754]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="confirm5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" index="4" unique_id=1234266329]
+[node name="haircolor5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" unique_id=135135851]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="confirm6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" index="5" unique_id=1958104093]
+[node name="haircolor6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" unique_id=1935432333]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="confirm7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" index="6" unique_id=1050547949]
+[node name="haircolor7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" unique_id=1940949215]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
-[node name="confirm8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" index="7" unique_id=975413198]
+[node name="haircolor8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/haircolor-grid" unique_id=471781237]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
+
+[node name="hairlength-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=564952758]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="hairlength1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" unique_id=357515686]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" unique_id=958713731]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" unique_id=2011850317]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" unique_id=356569511]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" unique_id=1935905982]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" unique_id=1387573558]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" unique_id=1605099548]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="hairlength8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/hairlength-grid" unique_id=1041386071]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize-gridFHVS" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=1514500508]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="dicksize1FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" unique_id=1195782285]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize2FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" unique_id=807898498]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize3FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" unique_id=99029105]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize4FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" unique_id=1267168062]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize5FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" unique_id=1264554241]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize6FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" unique_id=1764543410]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize7FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" unique_id=1913297318]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize8FHVS" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridFHVS" unique_id=28546873]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize-gridE" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=1224593663]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="dicksize1E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" unique_id=291726032]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize2E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" unique_id=2030667462]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize3E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" unique_id=1075556721]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize4E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" unique_id=1930617944]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize5E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" unique_id=619103688]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize6E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" unique_id=22181114]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize7E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" unique_id=386870747]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="dicksize8E" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/dicksize-gridE" unique_id=2111235796]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="chestsize-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=1189332544]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="chestsize1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" unique_id=1074097970]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="chestsize2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" unique_id=366092715]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="chestsize3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" unique_id=1419810755]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="chestsize4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" unique_id=1618457105]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="chestsize5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" unique_id=1424194970]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="chestsize6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" unique_id=1346177543]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="chestsize7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" unique_id=211902257]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="chestsize8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/chestsize-grid" unique_id=1394084879]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="gender-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=1070846161]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="gender1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" unique_id=689151178]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="gender2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" unique_id=728798743]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="gender3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" unique_id=1344956110]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="gender4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" unique_id=43757853]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="gender5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" unique_id=2063122454]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="gender6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" unique_id=1500075763]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="gender7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" unique_id=1583359998]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="gender8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/gender-grid" unique_id=801038070]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="class-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=630053050]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="class1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" unique_id=1398688919]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="class2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" unique_id=1963863494]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="class3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" unique_id=949128614]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="class4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" unique_id=933461628]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="class5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" unique_id=1463210781]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="class6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" unique_id=1234283395]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="class7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" unique_id=1056257431]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="class8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/class-grid" unique_id=393387375]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="confirm-grid" type="GridContainer" parent="Background/MarginContainer/right-side/Choices/decision-box" unique_id=472673122]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="confirm1" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" unique_id=1995214435]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="confirm2" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" unique_id=265048187]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="confirm3" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" unique_id=614430699]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="confirm4" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" unique_id=260255079]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="confirm5" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" unique_id=1234266329]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="confirm6" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" unique_id=1958104093]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="confirm7" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" unique_id=1050547949]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="confirm8" type="Button" parent="Background/MarginContainer/right-side/Choices/decision-box/confirm-grid" unique_id=975413198]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="class-variables" type="Node" parent="." unique_id=250365118]
+script = SubResource("GDScript_mwb40")
 
 [connection signal="text_submitted" from="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/Name-edit" to="Background/MarginContainer/right-side/Game info/MarginContainer/context-box/context-text/name-confirm" method="_on_nameedit_text_submitted"]
 [connection signal="mouse_entered" from="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1" to="Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice1/felynx-chover" method="_on_choice_1_mouse_entered"]

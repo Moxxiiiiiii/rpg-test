@@ -5,9 +5,9 @@
 [ext_resource type="Script" uid="uid://ir7rbh6g8frk" path="res://Scenes/Inventory/equipment_text.gd" id="2_de3ro"]
 [ext_resource type="Script" uid="uid://ccq7wwh47c3dy" path="res://Scenes/Inventory/equipment_stats_text.gd" id="3_ck35p"]
 [ext_resource type="Script" uid="uid://48jw3d776l6u" path="res://Scenes/Inventory/all_items.gd" id="4_0dubb"]
-[ext_resource type="Script" uid="uid://cj2kn6xu2s014" path="res://Scenes/Inventory/character_overview_text.gd" id="5_s8uyb"]
-[ext_resource type="Script" uid="uid://bpnhlxady3j78" path="res://Scenes/Inventory/attribute_overview_text.gd" id="6_nffyk"]
-[ext_resource type="Script" uid="uid://cxc2nm13hklea" path="res://Scenes/Inventory/perks_text.gd" id="7_nffyk"]
+[ext_resource type="Script" path="res://Scenes/Inventory/character_overview_text.gd" id="5_s8uyb"]
+[ext_resource type="Script" path="res://Scenes/Inventory/attribute_overview_text.gd" id="6_nffyk"]
+[ext_resource type="Script" path="res://Scenes/Inventory/perks_text.gd" id="7_nffyk"]
 
 [sub_resource type="GDScript" id="GDScript_80nbo"]
 
