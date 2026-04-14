@@ -29,6 +29,7 @@ extends Node
 @onready var playerIntelligence = 4
 @onready var playerCharisma = 4
 @onready var playerAgility = 4
+@onready var playerAttributesRemaining = 0
 
 ## Declare Date and Time
 

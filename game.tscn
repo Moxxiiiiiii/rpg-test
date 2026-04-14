@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dhbldhv6juvq6" path="res://Scenes/Inventory/inv_hsl_organise.gd" id="3_ryrav"]
 [ext_resource type="Script" uid="uid://ccq7wwh47c3dy" path="res://Scenes/Inventory/equipment_stats_text.gd" id="4_ryrav"]
 [ext_resource type="Script" uid="uid://48jw3d776l6u" path="res://Scenes/Inventory/all_items.gd" id="5_eow3j"]
+[ext_resource type="Script" uid="uid://deoqcrbjvhh2n" path="res://switch_controller_script.gd" id="7_eow3j"]
 
 [sub_resource type="GDScript" id="GDScript_80nbo"]
 
@@ -66,6 +67,9 @@ corner_radius_bottom_left = 6
 bg_color = Color(0.30807704, 0.59817183, 0.7549823, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfv3a"]
+bg_color = Color(0.4769836, 0.7670783, 0.8856455, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sc4i"]
 bg_color = Color(0.4769836, 0.7670783, 0.8856455, 1)
 
 [sub_resource type="GDScript" id="GDScript_mwb40"]
@@ -798,6 +802,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="inventory-left" type="GridContainer" parent="Inventory/Background/MarginContainer/right-side/Game info/MarginContainer/context-box/inventory-main" unique_id=1430977319]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -807,6 +812,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_lfv3a")
+bbcode_enabled = true
 script = ExtResource("3_7jktm")
 
 [node name="equipment-stats-text" type="RichTextLabel" parent="Inventory/Background/MarginContainer/right-side/Game info/MarginContainer/context-box/inventory-main/inventory-left" unique_id=1811773791]
@@ -815,9 +821,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_lfv3a")
+bbcode_enabled = true
 script = ExtResource("4_ryrav")
 
 [node name="inventory-right" type="GridContainer" parent="Inventory/Background/MarginContainer/right-side/Game info/MarginContainer/context-box/inventory-main" unique_id=578708385]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -830,6 +838,42 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_lfv3a")
 bbcode_enabled = true
 script = ExtResource("5_eow3j")
 
+[node name="character-overview-left" type="GridContainer" parent="Inventory/Background/MarginContainer/right-side/Game info/MarginContainer/context-box/inventory-main" unique_id=1739894588]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="character-overview-text" type="RichTextLabel" parent="Inventory/Background/MarginContainer/right-side/Game info/MarginContainer/context-box/inventory-main/character-overview-left" unique_id=1620405589]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_7sc4i")
+bbcode_enabled = true
+
+[node name="attribute-overview-text" type="RichTextLabel" parent="Inventory/Background/MarginContainer/right-side/Game info/MarginContainer/context-box/inventory-main/character-overview-left" unique_id=1135184653]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_7sc4i")
+bbcode_enabled = true
+
+[node name="character-overview-right" type="GridContainer" parent="Inventory/Background/MarginContainer/right-side/Game info/MarginContainer/context-box/inventory-main" unique_id=1057968814]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="perks-text" type="RichTextLabel" parent="Inventory/Background/MarginContainer/right-side/Game info/MarginContainer/context-box/inventory-main/character-overview-right" unique_id=351416324]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_7sc4i")
+bbcode_enabled = true
+
 [node name="context-text" type="RichTextLabel" parent="Inventory/Background/MarginContainer/right-side/Game info/MarginContainer/context-box" unique_id=595811797]
 visible = false
 layout_mode = 0
@@ -841,6 +885,9 @@ theme_override_font_sizes/normal_font_size = 24
 text = "Welcome to Tarin!
 
 Tarin is a world set far further into the future than our own. It's a world filled with excitement, danger, love, lust and more! To begin your journey, all you need to do is use the menu below. "
+
+[node name="switch-controller-script" type="Node" parent="Inventory/Background/MarginContainer/right-side" unique_id=1003567210]
+script = ExtResource("7_eow3j")
 
 [node name="Choices" type="PanelContainer" parent="Inventory/Background/MarginContainer/right-side" unique_id=1351525129]
 custom_minimum_size = Vector2(0, 200)
@@ -857,6 +904,7 @@ theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="choice-grid" type="GridContainer" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box" unique_id=1412144041]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -933,8 +981,82 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Character"
 
+[node name="overview-grid" type="GridContainer" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box" unique_id=415583711]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 78
+theme_override_constants/v_separation = 33
+columns = 4
+
+[node name="overview1" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/overview-grid" unique_id=1698802595]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Quests"
+
+[node name="overview2" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/overview-grid" unique_id=2130942833]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "People"
+
+[node name="overview3" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/overview-grid" unique_id=46310939]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Places"
+
+[node name="overview4" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/overview-grid" unique_id=1800443714]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Skills"
+
+[node name="overview5" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/overview-grid" unique_id=713183163]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="overview6" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/overview-grid" unique_id=569839399]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="overview7" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/overview-grid" unique_id=727521914]
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[node name="overview8" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/overview-grid" unique_id=800068797]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Items"
+
 [node name="class-variables" type="Node" parent="." unique_id=250365118]
 script = SubResource("GDScript_mwb40")
 
 [connection signal="pressed" from="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/inventory-box/inventory-organise/inventory-button" to="Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/inventory-box/inventory-organise/inventory-button" method="_on_pressed"]
 [connection signal="pressed" from="Inventory/Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/inventory-box/inventory-organise/inventory-button" to="Inventory/Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/inventory-box/inventory-organise/inventory-button" method="_on_pressed"]
+[connection signal="pressed" from="Inventory/Background/MarginContainer/right-side/Choices/decision-box/choice-grid/choice8" to="Inventory/Background/MarginContainer/right-side/switch-controller-script" method="_on_choice_8_pressed"]
+[connection signal="pressed" from="Inventory/Background/MarginContainer/right-side/Choices/decision-box/overview-grid/overview8" to="Inventory/Background/MarginContainer/right-side/switch-controller-script" method="_on_overview_8_pressed"]

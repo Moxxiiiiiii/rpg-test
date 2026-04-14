@@ -22,8 +22,3 @@ func _ready() -> void:
 	%"inv-charisma-text".text = "Charisma: " + str(ClassVariables.playerCharisma)
 	%"inv-agility-text".text = "Agility: " + str(ClassVariables.playerAgility)
 	%"inv-credits-text".text = "Credits: " + str(ClassVariables.playerCredits)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

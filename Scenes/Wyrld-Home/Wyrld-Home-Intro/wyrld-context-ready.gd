@@ -1,4 +1,5 @@
 extends RichTextLabel
+@onready var context_text: RichTextLabel = %"context-text"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

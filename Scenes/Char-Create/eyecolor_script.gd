@@ -51,11 +51,11 @@ func display_hair_color():
 		\nIt takes them a while to figure out the colour of your hair..."
 		%haircolor1.text = "Brown"
 		%haircolor2.text = "Black"
-		%haircolor3.text = "Aubern"
+		%haircolor3.text = "Pink"
 		%haircolor4.text = "Red"
 		%haircolor5.text = "Orange"
 		%haircolor6.text = "Blonde"
-		%haircolor7.text = "Silver"
+		%haircolor7.text = "Purple"
 		%haircolor8.text = "White"
 
 ## Signals

@@ -13,7 +13,3 @@ Feet: " + ClassVariables.playerFeet + "
 Shield: " + ClassVariables.playerShield + "
 Weapon: " + ClassVariables.playerWeapon)
 "[/font_size][/center]"
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
