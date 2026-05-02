@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://gvqts36wjulv" path="res://addons/fonts/conthrax/Conthrax-SemiBold.otf" id="3_vef74"]
 [ext_resource type="Script" uid="uid://ccq7wwh47c3dy" path="res://Scenes/Inventory/equipment_stats_text.gd" id="4_ryrav"]
 [ext_resource type="Script" uid="uid://48jw3d776l6u" path="res://Scenes/Inventory/all_items.gd" id="5_eow3j"]
+[ext_resource type="Theme" uid="uid://b2tles6fovewi" path="res://addons/themes/general-words.tres" id="5_hve3p"]
 [ext_resource type="Script" uid="uid://deoqcrbjvhh2n" path="res://switch_controller_script.gd" id="7_eow3j"]
 
 [sub_resource type="GDScript" id="GDScript_80nbo"]
@@ -33,10 +34,14 @@ bg_color = Color(0.9741791, 0.17673185, 0.538768, 1)
 
 [sub_resource type="Theme" id="Theme_lc2xo"]
 default_font = ExtResource("3_j5wjh")
-default_font_size = 25
+default_font_size = 22
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2o6t"]
 bg_color = Color(0.91764706, 0.8392157, 0.78431374, 1)
+border_width_left = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.4627451, 0.015686275, 0.23529412, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -64,7 +69,7 @@ default_font = ExtResource("3_vef74")
 [sub_resource type="GDScript" id="GDScript_j5wjh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vef74"]
-bg_color = Color(0.036378834, 0.29938552, 0.3831717, 1)
+bg_color = Color(0.7764706, 0.62352943, 0.50980395, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -72,26 +77,35 @@ border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hve3p"]
-bg_color = Color(1.92523e-06, 0.5406126, 0.63022685, 1)
+bg_color = Color(0.4627451, 0.015686275, 0.23529412, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfdv2"]
 bg_color = Color(0.11349284, 0.105085455, 0.107226364, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotsf"]
-bg_color = Color(0.3562991, 0.59489346, 0.72295207, 1)
+bg_color = Color(0.972549, 0.1764706, 0.5372549, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lc2xo"]
-bg_color = Color(0.34301907, 0.59691554, 0.72678554, 1)
+bg_color = Color(0.91764706, 0.8392157, 0.78431374, 1)
+border_width_left = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.4627451, 0.015686275, 0.23529412, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_215e1"]
-bg_color = Color(0.30807704, 0.59817183, 0.7549823, 1)
+bg_color = Color(0.91764706, 0.8392157, 0.78431374, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfv3a"]
-bg_color = Color(0.4769836, 0.7670783, 0.8856455, 1)
+bg_color = Color(0.91764706, 0.8392157, 0.78431374, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.4627451, 0.015686275, 0.23529412, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sc4i"]
 bg_color = Color(0.4769836, 0.7670783, 0.8856455, 1)
@@ -191,7 +205,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("3_vef74")
-theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/normal_font_size = 22
 text = " Time: 
 00:00"
 horizontal_alignment = 1
@@ -240,14 +254,16 @@ vertical_alignment = 1
 [node name="health-text" type="Label" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/Panel2/hsl-organise" unique_id=1761830370]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("3_vef74")
+theme_override_font_sizes/font_size = 24
 text = "Health: min / max "
 horizontal_alignment = 1
 
 [node name="shield-text" type="Label" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/Panel2/hsl-organise" unique_id=1532206359]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("3_vef74")
+theme_override_font_sizes/font_size = 24
 text = "Shields: min / max"
 horizontal_alignment = 1
 
@@ -255,7 +271,8 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_font_sizes/font_size = 34
+theme_override_fonts/font = ExtResource("3_vef74")
+theme_override_font_sizes/font_size = 24
 text = "Lust: min / max"
 horizontal_alignment = 1
 
@@ -271,11 +288,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 11
+theme_override_constants/separation = 16
 
 [node name="attributes-title" type="Label" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=1427200986]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 10
 theme_override_fonts/font = ExtResource("3_vef74")
 theme_override_font_sizes/font_size = 32
 text = "Attributes"
@@ -284,32 +302,33 @@ horizontal_alignment = 1
 [node name="strength-text" type="Label" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=811438313]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_j5wjh")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("3_vef74")
+theme_override_font_sizes/font_size = 24
 text = "Strength: str"
 horizontal_alignment = 1
 
 [node name="intelligence-text" type="Label" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=1741619428]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_j5wjh")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("3_vef74")
+theme_override_font_sizes/font_size = 24
 text = "Intelligence: int"
 horizontal_alignment = 1
 
 [node name="charisma-text" type="Label" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=2040215062]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_j5wjh")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("3_vef74")
+theme_override_font_sizes/font_size = 24
 text = "Charisma: chr"
 horizontal_alignment = 1
 
 [node name="agility-text" type="Label" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=507350312]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_j5wjh")
-theme_override_font_sizes/font_size = 32
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("3_vef74")
+theme_override_font_sizes/font_size = 24
 text = "Agility: agi"
 horizontal_alignment = 1
 
@@ -361,57 +380,21 @@ theme_override_constants/h_separation = 13
 theme_override_constants/v_separation = 4
 columns = 2
 
-[node name="save-box" type="Panel" parent="Background/MarginContainer/GridContainer/left-side/Save & Load/save-grid" unique_id=1489938400]
+[node name="save-box" type="Button" parent="Background/MarginContainer/GridContainer/left-side/Save & Load/save-grid" unique_id=602431229]
 custom_minimum_size = Vector2(156, 68)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-
-[node name="save-text" type="RichTextLabel" parent="Background/MarginContainer/GridContainer/left-side/Save & Load/save-grid/save-box" unique_id=810392646]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.0
-offset_top = -25.0
-offset_right = 59.0
-offset_bottom = 26.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("3_vef74")
-theme_override_font_sizes/normal_font_size = 30
+theme = ExtResource("5_hve3p")
 text = "Save"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="load-box" type="Panel" parent="Background/MarginContainer/GridContainer/left-side/Save & Load/save-grid" unique_id=925142572]
+[node name="load-box" type="Button" parent="Background/MarginContainer/GridContainer/left-side/Save & Load/save-grid" unique_id=787873091]
 custom_minimum_size = Vector2(156, 68)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-
-[node name="load-text" type="RichTextLabel" parent="Background/MarginContainer/GridContainer/left-side/Save & Load/save-grid/load-box" unique_id=176979287]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.0
-offset_top = -25.0
-offset_right = 59.0
-offset_bottom = 26.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("3_vef74")
-theme_override_font_sizes/normal_font_size = 30
+theme = ExtResource("5_hve3p")
 text = "Load"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="right-side" type="VBoxContainer" parent="Background/MarginContainer/GridContainer" unique_id=587265514]
 custom_minimum_size = Vector2(1500, 0)
@@ -437,11 +420,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7jktm")
 
 [node name="context-text" type="RichTextLabel" parent="Background/MarginContainer/GridContainer/right-side/Game info/MarginContainer/context-box" unique_id=531777206]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 1476.0
-offset_bottom = 781.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_vef74")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Welcome to Tarin!
@@ -607,8 +591,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_vef74")
 theme_override_font_sizes/normal_font_size = 22
-text = "Date: xx/xx/xx"
+text = " Date: 
+xx/xx/xx"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -617,8 +603,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_vef74")
 theme_override_font_sizes/normal_font_size = 22
-text = "Time: 00:00"
+text = " Time: 
+00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -648,19 +636,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 21
 script = ExtResource("3_ryrav")
 
 [node name="inv-vital-title" type="Label" parent="Inventory/Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/Panel2/inv-hsl-organise" unique_id=484977917]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("3_vef74")
+theme_override_font_sizes/font_size = 32
 text = "Vital Stats"
 horizontal_alignment = 1
 
 [node name="inv-health-text" type="Label" parent="Inventory/Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/Panel2/inv-hsl-organise" unique_id=1196030219]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vef74")
 theme_override_font_sizes/font_size = 24
 text = "Health: min / max "
 horizontal_alignment = 1
@@ -668,6 +659,7 @@ horizontal_alignment = 1
 [node name="inv-shield-text" type="Label" parent="Inventory/Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/Panel2/inv-hsl-organise" unique_id=493539183]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vef74")
 theme_override_font_sizes/font_size = 24
 text = "Shields: min / max"
 horizontal_alignment = 1
@@ -675,6 +667,8 @@ horizontal_alignment = 1
 [node name="inv-lust-text" type="Label" parent="Inventory/Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/Panel2/inv-hsl-organise" unique_id=1076952617]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("3_vef74")
 theme_override_font_sizes/font_size = 24
 text = "Lust: min / max"
 horizontal_alignment = 1
@@ -691,18 +685,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 11
+theme_override_constants/separation = 15
 
 [node name="inv-attributes-title" type="Label" parent="Inventory/Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=891743680]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("3_vef74")
+theme_override_font_sizes/font_size = 32
 text = "Attributes"
 horizontal_alignment = 1
 
 [node name="inv-strength-text" type="Label" parent="Inventory/Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=881333827]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vef74")
 theme_override_font_sizes/font_size = 24
 text = "Strength: str"
 horizontal_alignment = 1
@@ -710,6 +707,7 @@ horizontal_alignment = 1
 [node name="inv-intelligence-text" type="Label" parent="Inventory/Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=741714503]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vef74")
 theme_override_font_sizes/font_size = 24
 text = "Intelligence: int"
 horizontal_alignment = 1
@@ -717,6 +715,7 @@ horizontal_alignment = 1
 [node name="inv-charisma-text" type="Label" parent="Inventory/Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=963305206]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vef74")
 theme_override_font_sizes/font_size = 24
 text = "Charisma: chr"
 horizontal_alignment = 1
@@ -724,6 +723,8 @@ horizontal_alignment = 1
 [node name="inv-agility-text" type="Label" parent="Inventory/Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/attribute-box/attribute-organise" unique_id=680026749]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("3_vef74")
 theme_override_font_sizes/font_size = 24
 text = "Agility: agi"
 horizontal_alignment = 1
@@ -748,12 +749,14 @@ layout_mode = 2
 [node name="inv-credits-text" type="Label" parent="Inventory/Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/inventory-box/inventory-organise" unique_id=2018036122]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vef74")
 theme_override_font_sizes/font_size = 30
 text = "Credits: cred"
 horizontal_alignment = 1
 
 [node name="inventory-button" type="Button" parent="Inventory/Background/MarginContainer/left-side/Stats and Info/stat-block/stat-grid/stat-panel/stat-container/inventory-box/inventory-organise" unique_id=1598773287]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vef74")
 theme_override_font_sizes/font_size = 30
 text = "Inventory"
 script = ExtResource("2_e2o6t")
@@ -761,7 +764,7 @@ script = ExtResource("2_e2o6t")
 [node name="Save & Load" type="PanelContainer" parent="Inventory/Background/MarginContainer/left-side" unique_id=1211031275]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-size_flags_vertical = 6
+size_flags_vertical = 10
 size_flags_stretch_ratio = 0.13
 theme_override_styles/panel = SubResource("StyleBoxFlat_lc2xo")
 
@@ -773,55 +776,21 @@ theme_override_constants/h_separation = 13
 theme_override_constants/v_separation = 4
 columns = 2
 
-[node name="save-box" type="Panel" parent="Inventory/Background/MarginContainer/left-side/Save & Load/save-grid" unique_id=1539763028]
+[node name="save-box" type="Button" parent="Inventory/Background/MarginContainer/left-side/Save & Load/save-grid" unique_id=307228381]
 custom_minimum_size = Vector2(156, 68)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-
-[node name="save-text" type="RichTextLabel" parent="Inventory/Background/MarginContainer/left-side/Save & Load/save-grid/save-box" unique_id=1044050083]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.0
-offset_top = -25.0
-offset_right = 59.0
-offset_bottom = 26.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 30
+theme = ExtResource("5_hve3p")
 text = "Save"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="load-box" type="Panel" parent="Inventory/Background/MarginContainer/left-side/Save & Load/save-grid" unique_id=1803936972]
+[node name="load-box" type="Button" parent="Inventory/Background/MarginContainer/left-side/Save & Load/save-grid" unique_id=1449163124]
 custom_minimum_size = Vector2(156, 68)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-
-[node name="load-text" type="RichTextLabel" parent="Inventory/Background/MarginContainer/left-side/Save & Load/save-grid/load-box" unique_id=1088333154]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.0
-offset_top = -25.0
-offset_right = 59.0
-offset_bottom = 26.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 30
+theme = ExtResource("5_hve3p")
 text = "Load"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="right-side" type="VBoxContainer" parent="Inventory/Background/MarginContainer" unique_id=879021825]
 custom_minimum_size = Vector2(1500, 0)
@@ -863,6 +832,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_j5wjh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lfv3a")
 bbcode_enabled = true
 script = ExtResource("3_7jktm")
@@ -872,6 +842,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_j5wjh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lfv3a")
 bbcode_enabled = true
 script = ExtResource("4_ryrav")
@@ -886,6 +857,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_j5wjh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lfv3a")
 bbcode_enabled = true
 script = ExtResource("5_eow3j")
@@ -969,6 +941,8 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
+theme_override_fonts/font = ExtResource("3_vef74")
 theme_override_font_sizes/font_size = 30
 text = "Equip"
 
@@ -979,6 +953,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 text = "Unequip"
 
@@ -987,6 +962,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 
 [node name="choice3" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=1771809029]
@@ -994,6 +970,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 
 [node name="choice4" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=55958114]
@@ -1001,6 +978,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 
 [node name="choice5" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=1756003314]
@@ -1008,6 +986,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 
 [node name="choice6" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=441756650]
@@ -1015,6 +994,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 
 [node name="choice7" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=913922391]
@@ -1022,6 +1002,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 
 [node name="choice8" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/choice-grid" unique_id=1274791849]
@@ -1030,6 +1011,8 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
+theme_override_fonts/font = ExtResource("3_vef74")
 theme_override_font_sizes/font_size = 30
 text = "Character"
 
@@ -1048,6 +1031,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 text = "Quests"
 
@@ -1056,6 +1040,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 text = "People"
 
@@ -1064,6 +1049,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 text = "Places"
 
@@ -1072,6 +1058,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 text = "Skills"
 
@@ -1080,6 +1067,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 
 [node name="overview6" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/overview-grid" unique_id=569839399]
@@ -1087,6 +1075,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 
 [node name="overview7" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/overview-grid" unique_id=727521914]
@@ -1094,6 +1083,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 
 [node name="overview8" type="Button" parent="Inventory/Background/MarginContainer/right-side/Choices/decision-box/overview-grid" unique_id=800068797]
@@ -1102,6 +1092,7 @@ custom_minimum_size = Vector2(300, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_hve3p")
 theme_override_font_sizes/font_size = 30
 text = "Items"
 
