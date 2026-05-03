@@ -2,9 +2,12 @@
 
 [ext_resource type="Script" uid="uid://d2ivr5n07vxj5" path="res://hsl_organise.gd" id="1_hupkp"]
 [ext_resource type="FontFile" uid="uid://gvqts36wjulv" path="res://addons/fonts/conthrax/Conthrax-SemiBold.otf" id="1_riqsa"]
+[ext_resource type="Script" uid="uid://y2180r6kfexn" path="res://Global/player_icon.gd" id="1_ysky3"]
 [ext_resource type="Script" uid="uid://ctuihkekjs1ga" path="res://Scenes/Char-Create/char-create-functions.gd" id="2_ea161"]
+[ext_resource type="Texture2D" uid="uid://dvcqswj360eiw" path="res://addons/sprites/player-icon-Equine.png" id="2_u3t6o"]
 [ext_resource type="Script" uid="uid://dqcxh1xis5qfi" path="res://Scenes/Char-Create/name_confirm.gd" id="3_77fi1"]
 [ext_resource type="Script" uid="uid://paayy5a4cn5x" path="res://Scenes/Char-Create/felynx_chover.gd" id="3_dm4fs"]
+[ext_resource type="Texture2D" uid="uid://d4mqy1lsjjlyf" path="res://addons/sprites/player-icon-felynx.png" id="3_qifpy"]
 [ext_resource type="Theme" uid="uid://b2tles6fovewi" path="res://addons/themes/general-words.tres" id="3_ysky3"]
 [ext_resource type="Script" uid="uid://dry4r8m6h0tyq" path="res://Scenes/Char-Create/chestsize_script.gd" id="4_6ndy6"]
 [ext_resource type="FontFile" uid="uid://c1s8c4g6vmuy2" path="res://addons/fonts/NerdFont/3270NerdFont-Regular.ttf" id="4_a5336"]
@@ -15,9 +18,11 @@
 [ext_resource type="Script" uid="uid://bw7hwoo7e5dfj" path="res://Scenes/Char-Create/gender_script.gd" id="4_jlwvk"]
 [ext_resource type="Script" uid="uid://bkth655t2k06j" path="res://Scenes/Char-Create/dicksize_e_script.gd" id="4_kircn"]
 [ext_resource type="Script" uid="uid://c18iwt0fvis3h" path="res://Scenes/Char-Create/haircolor_script.gd" id="4_uemx7"]
+[ext_resource type="Texture2D" uid="uid://bkj750ullxcju" path="res://addons/sprites/player-icon-vulpynx.png" id="4_ulvki"]
 [ext_resource type="Script" uid="uid://c2tot5qjnilth" path="res://Scenes/Char-Create/hairlength_script.gd" id="4_vje74"]
 [ext_resource type="Script" uid="uid://mr6bsmpb474" path="res://Scenes/Char-Create/stature_script-FHV.gd" id="5_5blr1"]
 [ext_resource type="Script" uid="uid://bc5k6uxgosthg" path="res://Scenes/Char-Create/dicksize_fhvs_script.gd" id="5_6ndy6"]
+[ext_resource type="Texture2D" uid="uid://d0wxloabxevgv" path="res://addons/sprites/player-icon-sprite.png" id="5_mejw6"]
 [ext_resource type="Script" uid="uid://c5t2f6yornfa7" path="res://Scenes/Char-Create/slyme_chover.gd" id="5_xyf3y"]
 [ext_resource type="Script" uid="uid://o1eadqliu1yi" path="res://Scenes/Char-Create/stature_script_s.gd" id="6_vc7we"]
 [ext_resource type="Script" uid="uid://dbwwjr0o7nwbj" path="res://Scenes/Char-Create/vulpine_chover.gd" id="6_vgbrb"]
@@ -177,6 +182,31 @@ custom_minimum_size = Vector2(0, 225)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_feb5d")
+script = ExtResource("1_ysky3")
+
+[node name="PlayerIconEquine" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=445732788]
+unique_name_in_owner = true
+visible = false
+position = Vector2(174.5, 112)
+texture = ExtResource("2_u3t6o")
+
+[node name="PlayerIconFelynx" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=858885603]
+unique_name_in_owner = true
+visible = false
+position = Vector2(175.5, 113)
+texture = ExtResource("3_qifpy")
+
+[node name="PlayerIconVulpynx" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=1120831612]
+unique_name_in_owner = true
+visible = false
+position = Vector2(176.5, 112)
+texture = ExtResource("4_ulvki")
+
+[node name="PlayerIconSprite" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=1355536552]
+unique_name_in_owner = true
+visible = false
+position = Vector2(176.5, 112)
+texture = ExtResource("5_mejw6")
 
 [node name="stat-block" type="PanelContainer" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info" unique_id=2110029301]
 custom_minimum_size = Vector2(0, 680)

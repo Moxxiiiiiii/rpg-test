@@ -50,6 +50,7 @@ func _on_choice_1_pressed() -> void:
 	## Hide unused elements
 	%"name-confirm".hide()
 	%"choice-grid".hide()
+	%PlayerIconSprite.hide()
 	
 	## Disconnect race choices
 	%choice1.pressed.disconnect(_on_choice_1_pressed)
@@ -59,7 +60,7 @@ func _on_choice_1_pressed() -> void:
 	%choice5.pressed.disconnect(_on_choice_5_pressed)
 	
 	## Prepare and display new elements
-	%"context-text".text = "How tall am I again?"
+	%"context-text".text = "As your name enters your mind, you manage to focus on your reflection seeing how tall you are..."
 	%height1.text = "4ft 0in"
 	%height2.text = "4ft 2in"
 	%height3.text = "4ft 4in"
@@ -68,6 +69,7 @@ func _on_choice_1_pressed() -> void:
 	%height6.text = "4ft 10in"
 	%height7.text = "5ft 0in"
 	%"height-grid".show()
+	%PlayerIconFelynx.show()
 
 func _on_choice_2_pressed() -> void:
 	## Gather Race info
@@ -86,7 +88,7 @@ func _on_choice_2_pressed() -> void:
 	%"choice-grid".hide()
 	
 	## Prepare and display new elements
-	%"context-text".text = "How tall am I again?"
+	%"context-text".text = "As your name enters your mind, you manage to focus on your reflection seeing how tall you are..."
 	%height1.text = "5ft 0in"
 	%height2.text = "5ft 2in"
 	%height3.text = "5ft 4in"
@@ -113,7 +115,7 @@ func _on_choice_3_pressed() -> void:
 	%"choice-grid".hide()
 	
 	## Prepare and display new elements
-	%"context-text".text = "How tall am I again?"
+	%"context-text".text = "As your name enters your mind, you manage to focus on your reflection seeing how tall you are..."
 	%height1.text = "4ft 0in"
 	%height2.text = "5ft 0in"
 	%height3.text = "6ft 0in"
@@ -136,9 +138,10 @@ func _on_choice_4_pressed() -> void:
 	## Hide unused elements
 	%"name-confirm".hide()
 	%"choice-grid".hide()
+	%PlayerIconSprite.hide()
 	
 	## Prepare and display new elements
-	%"context-text".text = "How tall am I again?"
+	%"context-text".text = "As your name enters your mind, you manage to focus on your reflection seeing how tall you are..."
 	%height1.text = "4ft 0in"
 	%height2.text = "4ft 4in"
 	%height3.text = "4ft 8in"
@@ -147,6 +150,7 @@ func _on_choice_4_pressed() -> void:
 	%height6.text = "4ft 8in"
 	%height7.text = "6ft 0in"
 	%"height-grid".show()
+	%PlayerIconVulpynx.show()
 
 func _on_choice_5_pressed() -> void:
 	## Gather Race info
@@ -163,9 +167,10 @@ func _on_choice_5_pressed() -> void:
 	## Hide unused elements
 	%"name-confirm".hide()
 	%"choice-grid".hide()
+	%PlayerIconSprite.hide()
 	
 	## Prepare and display new elements
-	%"context-text".text = "How tall am I again?"
+	%"context-text".text = "As your name enters your mind, you manage to focus on your reflection seeing how tall you are..."
 	%height1.text = "6ft 0in"
 	%height2.text = "6ft 2in"
 	%height3.text = "6ft 4in"
@@ -174,5 +179,6 @@ func _on_choice_5_pressed() -> void:
 	%height6.text = "6ft 10in"
 	%height7.text = "7ft 0in"
 	%"height-grid".show()
+	%PlayerIconEquine.show()
 	
 	

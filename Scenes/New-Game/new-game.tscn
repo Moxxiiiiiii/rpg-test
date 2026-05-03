@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://djmhtuol5ly4l"]
 
+[ext_resource type="Texture2D" uid="uid://dvcqswj360eiw" path="res://addons/sprites/player-icon-Equine.png" id="1_1txoo"]
 [ext_resource type="Script" uid="uid://d2ivr5n07vxj5" path="res://hsl_organise.gd" id="1_ye45e"]
 [ext_resource type="Script" uid="uid://bfk7a56ddxrx4" path="res://Scenes/New-Game/new-game.gd" id="2_2iqfd"]
 [ext_resource type="FontFile" uid="uid://gvqts36wjulv" path="res://addons/fonts/conthrax/Conthrax-SemiBold.otf" id="2_4efrf"]
 [ext_resource type="FontFile" uid="uid://c1s8c4g6vmuy2" path="res://addons/fonts/NerdFont/3270NerdFont-Regular.ttf" id="2_jwxv5"]
+[ext_resource type="Texture2D" uid="uid://d4mqy1lsjjlyf" path="res://addons/sprites/player-icon-felynx.png" id="2_tjjme"]
+[ext_resource type="Texture2D" uid="uid://bkj750ullxcju" path="res://addons/sprites/player-icon-vulpynx.png" id="3_eqk02"]
 [ext_resource type="Theme" uid="uid://b2tles6fovewi" path="res://addons/themes/general-words.tres" id="3_t8r8h"]
+[ext_resource type="Texture2D" uid="uid://d0wxloabxevgv" path="res://addons/sprites/player-icon-sprite.png" id="4_g8ehl"]
 
 [sub_resource type="GDScript" id="GDScript_bnxtq"]
 
@@ -94,6 +98,30 @@ custom_minimum_size = Vector2(0, 225)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_feb5d")
+
+[node name="PlayerIconEquine" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=1439460351]
+unique_name_in_owner = true
+visible = false
+position = Vector2(174.5, 112)
+texture = ExtResource("1_1txoo")
+
+[node name="PlayerIconFelynx" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=1698463355]
+unique_name_in_owner = true
+visible = false
+position = Vector2(175.5, 113)
+texture = ExtResource("2_tjjme")
+
+[node name="PlayerIconVulpynx" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=1052441397]
+unique_name_in_owner = true
+visible = false
+position = Vector2(176.5, 112)
+texture = ExtResource("3_eqk02")
+
+[node name="PlayerIconSprite" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=874163934]
+unique_name_in_owner = true
+visible = false
+position = Vector2(176.5, 112)
+texture = ExtResource("4_g8ehl")
 
 [node name="stat-block" type="PanelContainer" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info" unique_id=2110029301]
 custom_minimum_size = Vector2(0, 680)

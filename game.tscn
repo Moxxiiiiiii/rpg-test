@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://c6x1aoeyeeuxq"]
 
+[ext_resource type="Script" uid="uid://y2180r6kfexn" path="res://Global/player_icon.gd" id="1_7sc4i"]
 [ext_resource type="Script" uid="uid://d2ivr5n07vxj5" path="res://hsl_organise.gd" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://dvcqswj360eiw" path="res://addons/sprites/player-icon-Equine.png" id="2_80cx4"]
 [ext_resource type="Script" uid="uid://32mk2mjrny0v" path="res://inventory_button.gd" id="2_e2o6t"]
 [ext_resource type="Script" uid="uid://ir7rbh6g8frk" path="res://Scenes/Inventory/equipment_text.gd" id="3_7jktm"]
+[ext_resource type="Texture2D" uid="uid://d4mqy1lsjjlyf" path="res://addons/sprites/player-icon-felynx.png" id="3_e8heu"]
 [ext_resource type="FontFile" uid="uid://b6d100ptc8lbw" path="res://addons/fonts/NerdFont/3270NerdFont-Condensed.ttf" id="3_j5wjh"]
 [ext_resource type="Script" uid="uid://dhbldhv6juvq6" path="res://Scenes/Inventory/inv_hsl_organise.gd" id="3_ryrav"]
 [ext_resource type="FontFile" uid="uid://gvqts36wjulv" path="res://addons/fonts/conthrax/Conthrax-SemiBold.otf" id="3_vef74"]
+[ext_resource type="Texture2D" uid="uid://bkj750ullxcju" path="res://addons/sprites/player-icon-vulpynx.png" id="4_rvswv"]
 [ext_resource type="Script" uid="uid://ccq7wwh47c3dy" path="res://Scenes/Inventory/equipment_stats_text.gd" id="4_ryrav"]
+[ext_resource type="Texture2D" uid="uid://d0wxloabxevgv" path="res://addons/sprites/player-icon-sprite.png" id="5_boyg6"]
 [ext_resource type="Script" uid="uid://48jw3d776l6u" path="res://Scenes/Inventory/all_items.gd" id="5_eow3j"]
 [ext_resource type="Theme" uid="uid://b2tles6fovewi" path="res://addons/themes/general-words.tres" id="5_hve3p"]
 [ext_resource type="Script" uid="uid://deoqcrbjvhh2n" path="res://switch_controller_script.gd" id="7_eow3j"]
@@ -163,6 +168,31 @@ custom_minimum_size = Vector2(0, 225)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_feb5d")
+script = ExtResource("1_7sc4i")
+
+[node name="PlayerIconEquine" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=1448469832]
+unique_name_in_owner = true
+visible = false
+position = Vector2(174.5, 112)
+texture = ExtResource("2_80cx4")
+
+[node name="PlayerIconFelynx" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=116759079]
+unique_name_in_owner = true
+visible = false
+position = Vector2(175.5, 113)
+texture = ExtResource("3_e8heu")
+
+[node name="PlayerIconVulpynx" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=2042310090]
+unique_name_in_owner = true
+visible = false
+position = Vector2(176.5, 112)
+texture = ExtResource("4_rvswv")
+
+[node name="PlayerIconSprite" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=22466324]
+unique_name_in_owner = true
+visible = false
+position = Vector2(176.5, 112)
+texture = ExtResource("5_boyg6")
 
 [node name="stat-block" type="PanelContainer" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info" unique_id=2110029301]
 custom_minimum_size = Vector2(0, 680)

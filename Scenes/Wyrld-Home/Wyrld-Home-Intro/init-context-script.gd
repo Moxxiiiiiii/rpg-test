@@ -9,13 +9,19 @@ The hot water washes over your body, steam clouding up around you making it easy
 
 Taking a step out of the shower, and toweling yourself off – you wrap the damp towl around your body. It hugs to your breasts nicely, leaving a boxy outline that obscures enough of you to be comfortable heading out the bathroom. And luckily enough too – you’re greeted by Wyrld – the Slyme girl responsible for taking you in when you ended up stranded here on Earth. You’re not her child, or even a child by any means – but that’s never stopped her from doting on you like one. 
 
-[img ref]
+[center]{imgref}[/center]
 
-“Hiii there m’ little cutie!!” She excitedly beams out the moment she sees you, approaching you so she can wrap her gooey blue arms around you and pull you into a *biiiig* hug! It’s a little embarrasing, being pulled into those bouncy orbs on her chest – the soft, squishy cushions feel almost like a water bed with a little more give as she keeps you close.
+[center][img]res://addons/sprites/Wyrld-1.png[/img]
+“Hiii there, it's m' favourite lil' cutie!!”[/center]
+
+She excitedly beams out the moment she sees you, approaching you so she can wrap her gooey blue arms around you and pull you into a *biiiig* hug! It’s a little embarrasing, being pulled into those bouncy orbs on her chest – the soft, squishy cushions feel almost like a water bed with a little more give as she keeps you close.
 
 You remark that you’re not really her child, but thank her for her affection anyway – eventually breaking apart when she let’s you free.
 
-“C’mon over to the kitchen playerName, breakfast is just about ready and Wylatt will be here soon.” She saunters off cheerfully down the hall and towards the kitchen, giving you a good look at her sweet bubbly figure – a signature trait of many Slyme’s like her. Still, it’s no less pleasing to see her and her apron adorning her rather professional looking body-suit. Despite being such a homely and loving mother figure for the house, she’s a busy girl responsible for running her own shop in town.
+[center][img]res://addons/sprites/Wyrld-1.png[/img]
+“C’mon over to the kitchen playerName, breakfast is just about ready and Wylatt will be here soon.”[/center] 
+
+She saunters off cheerfully down the hall and towards the kitchen, giving you a good look at her sweet bubbly figure – a signature trait of many Slyme’s like her. Still, it’s no less pleasing to see her and her apron adorning her rather professional looking body-suit. Despite being such a homely and loving mother figure for the house, she’s a busy girl responsible for running her own shop in town.
 
 You let her know you’ll be just a second and head to your room, getting dressed and equipping your [Omni-Pad]. It rests comfortably on your wrist, although yours is a little more dated than most – it still functions just fine.
 
@@ -23,6 +29,6 @@ You let her know you’ll be just a second and head to your room, getting dresse
 	var story2var = story1var.replace("playerName", ClassVariables.playerName)
 	if ClassVariables.playerChestSize == "Flat":
 		var story3var = story2var.replace("breasts", "chest")
-		%"context-text".text = story3var
+		%"context-text".append_text(str(story3var))
 	else:
-		%"context-text".text = story2var
+		%"context-text".append_text(str(story2var))

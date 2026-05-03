@@ -1,17 +1,22 @@
 [gd_scene format=3 uid="uid://bxcisyj3b8rx6"]
 
+[ext_resource type="Script" uid="uid://d3lvx7x431lsh" path="res://Scenes/Wyrlds-Wonders/Wyrlds-Wonders-Intro/player_icon.gd" id="1_4qi0y"]
 [ext_resource type="Script" uid="uid://d2ivr5n07vxj5" path="res://hsl_organise.gd" id="1_pcjud"]
 [ext_resource type="FontFile" uid="uid://gvqts36wjulv" path="res://addons/fonts/conthrax/Conthrax-SemiBold.otf" id="1_ytwnm"]
+[ext_resource type="Texture2D" uid="uid://dvcqswj360eiw" path="res://addons/sprites/player-icon-Equine.png" id="2_8k4n5"]
 [ext_resource type="Script" uid="uid://32mk2mjrny0v" path="res://inventory_button.gd" id="2_k3v4n"]
 [ext_resource type="FontFile" uid="uid://c1s8c4g6vmuy2" path="res://addons/fonts/NerdFont/3270NerdFont-Regular.ttf" id="3_aedj2"]
+[ext_resource type="Texture2D" uid="uid://d4mqy1lsjjlyf" path="res://addons/sprites/player-icon-felynx.png" id="3_csbqf"]
 [ext_resource type="Script" uid="uid://rx8wnkx1eun1" path="res://Scenes/Wyrlds-Wonders/Wyrlds-Wonders-Intro/init-scene.gd" id="3_k3v4n"]
 [ext_resource type="Script" uid="uid://dhbldhv6juvq6" path="res://Scenes/Inventory/inv_hsl_organise.gd" id="3_nb1m2"]
+[ext_resource type="Texture2D" uid="uid://bkj750ullxcju" path="res://addons/sprites/player-icon-vulpynx.png" id="4_3ax6n"]
 [ext_resource type="Theme" uid="uid://b2tles6fovewi" path="res://addons/themes/general-words.tres" id="4_4qi0y"]
 [ext_resource type="Script" uid="uid://ir7rbh6g8frk" path="res://Scenes/Inventory/equipment_text.gd" id="4_6eq6c"]
 [ext_resource type="Script" uid="uid://cpw2ysrmluq2x" path="res://Scenes/Wyrlds-Wonders/Wyrlds-Wonders-Intro/arrival_script.gd" id="4_nb1m2"]
 [ext_resource type="Script" uid="uid://bsnkisbpxbs8d" path="res://Scenes/Wyrlds-Wonders/Wyrlds-Wonders-Intro/hover_control_script.gd" id="4_ut1ee"]
 [ext_resource type="Script" uid="uid://rihd8g3ax1yr" path="res://Scenes/Wyrlds-Wonders/Wyrlds-Wonders-Intro/floor_grid_script.gd" id="5_6eq6c"]
 [ext_resource type="Script" uid="uid://ccq7wwh47c3dy" path="res://Scenes/Inventory/equipment_stats_text.gd" id="5_k7wcy"]
+[ext_resource type="Texture2D" uid="uid://d0wxloabxevgv" path="res://addons/sprites/player-icon-sprite.png" id="5_u6dog"]
 [ext_resource type="Script" uid="uid://48jw3d776l6u" path="res://Scenes/Inventory/all_items.gd" id="6_h6u05"]
 [ext_resource type="Script" uid="uid://caahvfy05lofy" path="res://Scenes/Wyrlds-Wonders/Wyrlds-Wonders-Intro/floor_grid_2_script.gd" id="6_k7wcy"]
 [ext_resource type="Script" uid="uid://deoqcrbjvhh2n" path="res://switch_controller_script.gd" id="7_3w70i"]
@@ -186,6 +191,31 @@ custom_minimum_size = Vector2(0, 225)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_feb5d")
+script = ExtResource("1_4qi0y")
+
+[node name="PlayerIconEquine" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=163682811]
+unique_name_in_owner = true
+visible = false
+position = Vector2(174.5, 112)
+texture = ExtResource("2_8k4n5")
+
+[node name="PlayerIconFelynx" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=1147780944]
+unique_name_in_owner = true
+visible = false
+position = Vector2(175.5, 113)
+texture = ExtResource("3_csbqf")
+
+[node name="PlayerIconVulpynx" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=1917275893]
+unique_name_in_owner = true
+visible = false
+position = Vector2(176.5, 112)
+texture = ExtResource("4_3ax6n")
+
+[node name="PlayerIconSprite" type="Sprite2D" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info/player-icon" unique_id=1591560589]
+unique_name_in_owner = true
+visible = false
+position = Vector2(176.5, 112)
+texture = ExtResource("5_u6dog")
 
 [node name="stat-block" type="PanelContainer" parent="Background/MarginContainer/GridContainer/left-side/Stats and Info" unique_id=2110029301]
 custom_minimum_size = Vector2(0, 680)
