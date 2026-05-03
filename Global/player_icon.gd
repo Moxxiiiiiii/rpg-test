@@ -11,7 +11,7 @@ func _ready() -> void:
 		%PlayerIconFelynx.show()
 	elif ClassVariables.playerRace == "Equine":
 		%PlayerIconEquine.show()
-	elif ClassVariables.playerRace == "Vulpynx":
+	elif ClassVariables.playerRace == "Vulpine":
 		%PlayerIconVulpynx.show()
 	else:
 		%PlayerIconSprite.show()

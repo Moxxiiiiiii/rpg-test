@@ -14,7 +14,7 @@ Taking a step out of the shower, and toweling yourself off – you wrap the damp
 [center][img]res://addons/sprites/Wyrld-1.png[/img]
 “Hiii there, it's m' favourite lil' cutie!!”[/center]
 
-She excitedly beams out the moment she sees you, approaching you so she can wrap her gooey blue arms around you and pull you into a *biiiig* hug! It’s a little embarrasing, being pulled into those bouncy orbs on her chest – the soft, squishy cushions feel almost like a water bed with a little more give as she keeps you close.
+The busty Slyme girl excitedly beams out the moment she sees you, approaching you so she can wrap her gooey blue arms around you and pull you into a *biiiig* hug! It’s a little embarrasing, being pulled into those bouncy orbs on her chest – the soft, squishy cushions feel almost like a water bed with a little more give as she keeps you close.
 
 You remark that you’re not really her child, but thank her for her affection anyway – eventually breaking apart when she let’s you free.
 
